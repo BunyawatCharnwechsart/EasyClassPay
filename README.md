@@ -4,7 +4,7 @@
 
 ---
 
-##Tech Stack
+#Tech Stack
 - **Frontend:** HTML, CSS, Tailwind CSS, JavaScript  
 - **Backend:** Node.js กับ Express  
 - **ฐานข้อมูล:** MySQL
