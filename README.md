@@ -13,6 +13,7 @@
 
 | Name | Position |
 |------|----------|
-| ภัทรพร ตั้งแต่ง  | Project Owner / Business Analysis |
+| ภัทรพร ตั้งแต่ง  | Project Owner / Business Analysis / UX UI |
 | บุณยวัจน์ ชาญเวชศาสตร์ | Scrum Master / Developer |
 | กัลย์ธรินทร์ พีรทัตเวชกุล | Business Analysis / UX UI |
+| ปฏิภาณ กันต์นิกูล | Fornt End / Developer |
