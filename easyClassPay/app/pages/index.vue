@@ -1,4 +1,5 @@
 <template>
+
 <div class="BG">
 <div class="login-box">
     <h1>เข้าสู่ระบบ</h1>
@@ -16,7 +17,10 @@
     </div>
 </div>
 </template>
+
 <style>
+
+
 .BG {
       font-family: Arial, sans-serif;
       background-image: url(/background.png);
@@ -95,4 +99,5 @@
     .Register-text a{
         color: #000;
     }
+    
 </style>
