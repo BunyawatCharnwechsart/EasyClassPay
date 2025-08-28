@@ -38,7 +38,6 @@ useHead({
     box-sizing: border-box;
     align-content: center;
     font-family: 'Bai Jamjuree', sans-serif;
-    
 }
 
 .nav-bar {
@@ -78,7 +77,7 @@ useHead({
 }
 
 .list-menu li a {
-    position: relative; /* สำคัญสำหรับ ::before */
+    position: relative;
     color: black;
     text-decoration: none;
     font-size: 18px;
