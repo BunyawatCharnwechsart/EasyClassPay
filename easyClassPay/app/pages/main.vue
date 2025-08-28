@@ -11,6 +11,9 @@
             <li><nuxt-link to="/monthlyBill">บิลแบบรายเดือน</nuxt-link></li>
             <li><nuxt-link to="/allBill">บิลทั้งหมด</nuxt-link></li>
         </ul>
+        <div class="notification">
+            
+        </div>
         <div class="profile-img">
             <img src="/testProfile.png" alt="profile">
         </div>
@@ -72,7 +75,9 @@
 
 .profile-img {
     display: flex;
-    justify-self: end;
+    margin-left: auto;
+    margin-right: 30px;
+    cursor: pointer;
 }
 
 </style>
