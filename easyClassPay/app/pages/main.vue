@@ -12,14 +12,23 @@
             <li><nuxt-link to="/allBill">บิลทั้งหมด</nuxt-link></li>
         </ul>
         <div class="notification">
-            
-        </div>
-        <div class="profile-img">
-            <img src="/testProfile.png" alt="profile">
+            <img class="bell" src="/bell.png" alt="bell">
+            <img class="profile" src="/testProfile.png" alt="profile">
         </div>
     </nav>
 
 </template>
+
+<script setup>
+useHead({
+  link: [
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    }
+  ]
+})
+</script>
 
 <style>
       
@@ -28,6 +37,8 @@
     padding: 0px;
     box-sizing: border-box;
     align-content: center;
+    font-family: 'Bai Jamjuree', sans-serif;
+    
 }
 
 .nav-bar {
@@ -60,24 +71,54 @@
 }
 
 .list-menu li {
+    color: #fff;
+    display: grid;
+    place-content: center;
     list-style: none;
-    text-decoration: none;
-    color: black;
 }
 
 .list-menu li a {
-    align-content: center;
+    position: relative; /* สำคัญสำหรับ ::before */
     color: black;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
+    transition: all 0.3s ease;
+}
+    
+.list-menu li a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: black;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+    bottom: 0;
+    left: 0;
+    transform-origin: left;
 }
 
-.profile-img {
+.list-menu li a:hover::before {
+    transform: scaleX(1);
+}
+
+.notification{
     display: flex;
+    gap: 30px;
     margin-left: auto;
     margin-right: 30px;
+}
+
+.notification img {
+    align-self: center;
     cursor: pointer;
+}
+
+.bell {
+    width: 30px;
+    height: 30px;
 }
 
 </style>
