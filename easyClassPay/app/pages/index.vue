@@ -1,80 +1,98 @@
 <template>
+<div class="BG">
 <div class="login-box">
-    <h2>เข้าสู่ระบบ</h2>
+    <h1>เข้าสู่ระบบ</h1>
     <form action="" method="post">
-      <span>ชื่อผู้ใช้ /อีเมล /หมายเลขโทรศัพท์
-      </span>
+     <label for="username">ชื่อผู้ใช้ /อีเมล /หมายเลขโทรศัพท์</label>
       <input type="text" name="username" required>
-      <span>รหัสผ่าน
-      </span>
+     <label for="password">รหัสผ่าน</label>
       <input type="password" name="password" required>
-      <span>ลืมรหัสผ่าน
-      </span>
+      <NuxtLink to="/remember">ลืมรหัสผ่าน</NuxtLink>
       <input type="submit" value="เข้าสู่ระบบ">
+      <div class="Register-text">
+        <NuxtLink to="/register">สมัครสมาชิก</NuxtLink>
+      </div>
     </form>
     </div>
+</div>
 </template>
 <style>
-body {
+.BG {
       font-family: Arial, sans-serif;
       background-image: url(/background.png);
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
+      position: static;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
+      height: 100vh;
+      padding-right: 150px;
+      margin: 0;
     }
 
     .login-box {
       background: rgba(255, 255, 255, 0.2); /* โปร่งใสเล็กน้อย */
-      backdrop-filter: blur(10px);
-      padding: 50px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 300px;
-      height: 450px;
-      margin: 15% 15% 15% 100% ;
+      border: 2px solid #000;
+      padding: 40px 30px;
+      box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+      width: 400px;
+      height: 650px;
+      box-sizing: border-box;
+      color: #000;
+      margin: 0; 
     }
 
-    .login-box h2 {
+    .login-box h1 {
       text-align: center;
       margin-bottom: 20px;
+    }
+    .login-box label {
+      display: block;
+      margin-top: 15px;
+      font-size: 0.9em;
     }
 
     .login-box input[type="text"],
     .login-box input[type="password"] {
-      width: 80%;
+      width: 100%;
+      height: 50px;
       padding: 10px;
-      margin: 10px 0;
+      margin-top: 8px;
+      margin-bottom: 15px;
       border: 2px solid #ccc;
       border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 1em;
     }
 
     .login-box input[type="submit"] {
       width: 100%;
       height: 50px;
       padding: 10px;
+      margin-top: 10px;
       background-color: #159448;
       color: white;
       border: none;
       border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
+      box-sizing: border-box;
+      font-size: 1em;
     }
-
-    .login-box .register-link {
-      text-align: center;
-      margin-top: 15px;
-      font-size: 0.9em;
+    form a {
+        text-decoration:none ;
+        color:red;
+        text-align: center;
+        margin: 40%;
+        font-size: 0.9em;
     }
-
-    .login-box .register-link a {
-      color: #007bff;
-      text-decoration: none;
+    .Register-text{
+        text-decoration: none;
+        text-align: center;
+        margin-top: 15px;
+        font-size: 0.9em;
     }
-
-    .login-box .register-link a:hover {
-      text-decoration: underline;
+    .Register-text a{
+        color: #000;
     }
 </style>
