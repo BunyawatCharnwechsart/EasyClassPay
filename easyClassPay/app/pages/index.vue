@@ -1,26 +1,25 @@
 <template>
-    <div class="BG">
-        <div class="login-box">
-        <h1>เข้าสู่ระบบ</h1>
-        <form action="" method="post">
-            <label for="username">ชื่อผู้ใช้ /อีเมล /หมายเลขโทรศัพท์</label>
-            
-            <input type="text" name="username" required>
-            <label for="password">รหัสผ่าน</label>
 
-            <input type="password" name="password" required>
-            <NuxtLink to="/remember">ลืมรหัสผ่าน</NuxtLink>
-
-            <input type="submit" value="เข้าสู่ระบบ">
-            <div class="Register-text">
-                <NuxtLink to="/register">สมัครสมาชิก</NuxtLink>
-            </div>
-        </form>
-        </div>
+<div class="BG">
+<div class="login-box">
+    <h1>เข้าสู่ระบบ</h1>
+    <form action="" method="post">
+     <label for="username">ชื่อผู้ใช้ /อีเมล /หมายเลขโทรศัพท์</label>
+      <input type="text" name="username" required>
+     <label for="password">รหัสผ่าน</label>
+      <input type="password" name="password" required>
+      <NuxtLink to="/remember">ลืมรหัสผ่าน</NuxtLink>
+      <input type="submit" value="เข้าสู่ระบบ">
+      <div class="Register-text">
+        <NuxtLink to="/register">สมัครสมาชิก</NuxtLink>
+      </div>
+    </form>
     </div>
+</div>
 </template>
 
 <style>
+
 
 .BG {
       font-family: Arial, sans-serif;
