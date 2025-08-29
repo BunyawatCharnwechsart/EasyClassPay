@@ -10,12 +10,22 @@
             <label for="password">รหัสผ่าน</label>
             <input type="password" name="password" required>
 
-            <NuxtLink to="/remember">ลืมรหัสผ่าน</NuxtLink>
+            <div class="forgot-password">
+            <NuxtLink to="/remember"  class="forgot-password">ลืมรหัสผ่าน</NuxtLink>
+            </div>
             <input type="submit" value="เข้าสู่ระบบ">
 
-            <div class="Register-text">
-                <NuxtLink to="/register">สมัครสมาชิก</NuxtLink>
+            <div class="register-text">
+            <NuxtLink to="/register" class="register-link">สมัครสมาชิก</NuxtLink>
             </div>
+
+            <div class="google-login">
+                <button type="button" @click="loginWithGoogle">
+                <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google Icon" />
+                <span class="google-text">Continue with Google</span>
+                </button>
+            </div>
+
         </form>
     </div>
 </div>
@@ -40,7 +50,6 @@ useHead({
 }
 
 .BG {
-    font-family: Arial, sans-serif;
     background-image: url(/background.png);
     background-position: center;
     background-size: cover;
@@ -55,12 +64,12 @@ useHead({
 }
 
 .login-box {
-    background: rgba(255, 255, 255, 0.2); /* โปร่งใสเล็กน้อย */
+    background: rgba(255, 255, 255, 0.2);
     border: 2px solid #000;
     padding: 40px 30px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    height: 650px;
+    width: 450px;
+    height: 750px;
     box-sizing: border-box;
     color: #000;
     margin: 0; 
@@ -68,7 +77,7 @@ useHead({
 
 .login-box h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .login-box label {
@@ -80,21 +89,21 @@ useHead({
 .login-box input[type="text"],
 .login-box input[type="password"] {
     width: 100%;
-    height: 50px;
+    height: 55px;
     padding: 10px;
-    margin-top: 8px;
+    margin-top: 20px;
     margin-bottom: 15px;
     border: 2px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
 .login-box input[type="submit"] {
     width: 100%;
     height: 50px;
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 30px;
     background-color: #159448;
     color: white;
     border: none;
@@ -103,23 +112,68 @@ useHead({
     font-size: 1em;
 }
 
-form a {
-    text-decoration:none ;
-    color:red;
-    text-align: center;
-    margin: 40%;
-    font-size: 0.9em;
-}
-
-.Register-text{
+.forgot-password {
     text-decoration: none;
+    display: block;
     text-align: center;
-    margin-top: 15px;
-    font-size: 0.9em;
+    color: red;
+    font-size: 1em;
+    margin-top: 10px;
 }
 
-.Register-text a{
-    color: #000;
+.register-text {
+    text-align: center;
+    margin-top: 25px;
 }
-    
+
+.register-link {
+    color: #000;
+    font-size: 1.1em;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-link:hover {
+    color: #159448;
+}
+
+.google-login {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.google-login button {
+    background-color: white;
+    border: 2px solid #ccc;
+    color: #444;
+    font-size: 1em;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    transition: 0.3s ease;
+    box-sizing: border-box;
+}
+
+
+.google-login button:hover {
+    border-color: #888;
+    background-color: #f9f9f9;
+}
+
+.google-login img {
+    width: 35px;
+    height: 35px;
+}
+
+.google-text {
+  flex: 1;
+  text-align: left;
+  font-size: 1.2em;
+  font-weight: 500;
+}
 </style>
