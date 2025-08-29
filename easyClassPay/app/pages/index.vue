@@ -8,7 +8,21 @@
             <input type="text" name="username" required>
 
             <label for="password">รหัสผ่าน</label>
-            <input type="password" name="password" required>
+
+            <div class="password-wrapper">
+            <input
+                :type="showPassword ? 'text' : 'password'"
+                name="password"
+                id="password"
+                required/>
+            <button type="button" class="toggle-btn" @click="togglePassword">
+                <img
+                 :src="showPassword ? '/hide.png' : '/view.png'"
+                 alt="Toggle Password Visibility"
+                 class="eye-icon"
+                />
+            </button>
+            </div>
 
             <div class="forgot-password">
             <NuxtLink to="/remember"  class="forgot-password">ลืมรหัสผ่าน</NuxtLink>
@@ -32,6 +46,14 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
+const showPassword = ref(false)
+
+const togglePassword = () => {
+  showPassword.value = !showPassword.value
+}
+
 useHead({
   link: [
     {
@@ -113,7 +135,6 @@ useHead({
 }
 
 .forgot-password {
-    text-decoration: none;
     display: block;
     text-align: center;
     color: red;
@@ -129,12 +150,7 @@ useHead({
 .register-link {
     color: #000;
     font-size: 1.1em;
-    text-decoration: none;
     font-weight: 500;
-}
-
-.register-link:hover {
-    color: #159448;
 }
 
 .google-login {
@@ -176,4 +192,42 @@ useHead({
   font-size: 1.2em;
   font-weight: 500;
 }
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+  height: 55px;
+  padding: 10px;
+  padding-right: 45px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1.2em;
+}
+
+.toggle-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eye-icon {
+ margin-top:5px;
+ width: 24px;
+ height: 24px;
+ object-fit: contain;
+ }
 </style>
