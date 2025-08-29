@@ -2,7 +2,7 @@
 
     <nav class="nav-bar">
         <div class="head">
-            <img src="/logo1.png" alt="LOGO">
+            <img src="/LOGO.png" alt="LOGO">
             <p class="head-text">Easy Class Pay</p>
         </div>
         <ul class="list-menu">
