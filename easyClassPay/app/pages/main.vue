@@ -8,8 +8,8 @@
             <slide />
         </div>
 
-        <div class="menu-ui">
-            
+        <div>
+            <menuui />
         </div>
 
     </div>
@@ -18,6 +18,8 @@
 <script setup>
 import slide from '~/components/slide.vue';
 import Navbar from '~/components/navbar.vue';
+import menuui from '~/components/menuui.vue';
+
 
 useHead({
   link: [
@@ -36,5 +38,4 @@ useHead({
         box-sizing: border-box;
         font-family: 'Bai Jamjuree', sans-serif;
     }
-
 </style>
