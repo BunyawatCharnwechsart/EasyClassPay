@@ -3,6 +3,7 @@
 <div class="BG">
     <div class="login-box">
     <h1>เข้าสู่ระบบ</h1>
+
         <form action="" method="post">
             <label for="username">ชื่อผู้ใช้ /อีเมล /หมายเลขโทรศัพท์</label>
             <input type="text" name="username" required>
@@ -27,8 +28,11 @@
             </div>
 
         </form>
+
     </div>
+
 </div>
+
 </template>
 
 <script setup>
@@ -41,7 +45,6 @@ useHead({
   ]
 })
 </script>
-
 
 <style>
 
@@ -176,4 +179,5 @@ useHead({
   font-size: 1.2em;
   font-weight: 500;
 }
+
 </style>
