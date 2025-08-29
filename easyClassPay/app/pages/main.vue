@@ -7,10 +7,9 @@
         <div>
             <slide />
         </div>
-        
 
         <div class="menu-ui">
-
+            
         </div>
 
     </div>

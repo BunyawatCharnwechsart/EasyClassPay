@@ -34,7 +34,7 @@ function nextSlide() {
 
 // ตั้ง Interval ให้สไลด์เปลี่ยนอัตโนมัติทุก 2 วิ
 onMounted(() => {
-    slideInterval = setInterval(nextSlide, 3000);
+    slideInterval = setInterval(nextSlide, 5000);
 });
 
 // ล้าง Interval เวลา Component ถูกทำลาย
