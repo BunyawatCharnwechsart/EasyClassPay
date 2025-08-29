@@ -45,6 +45,7 @@ useHead({
     padding: 10px;
     align-items: center;
     background-color: #FFC93F;
+    border-bottom: 0.5px solid black;
 }
 
 .head {
