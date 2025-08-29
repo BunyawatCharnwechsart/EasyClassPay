@@ -5,17 +5,30 @@
     <form action="" method="post">
      <label for="username">ชื่อผู้ใช้ /อีเมล /หมายเลขโทรศัพท์</label>
       <input type="text" name="username" required>
-     <label for="password">รหัสผ่าน</label>
+
+      <label for="password">รหัสผ่าน</label>
       <input type="password" name="password" required>
+
       <NuxtLink to="/remember">ลืมรหัสผ่าน</NuxtLink>
       <input type="submit" value="เข้าสู่ระบบ">
+
       <div class="Register-text">
         <NuxtLink to="/register">สมัครสมาชิก</NuxtLink>
       </div>
+
+      <div class="google-login">
+      <button type="button" class="google-bt">
+      <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo"> ล็อกอินด้วย Google
+      </button>
+      </div>
+
     </form>
     </div>
+
 </div>
+
 </template>
+
 <style>
 .BG {
       font-family: Arial, sans-serif;
@@ -79,20 +92,54 @@
       box-sizing: border-box;
       font-size: 1em;
     }
+
     form a {
         text-decoration:none ;
         color:red;
         text-align: center;
         margin: 40%;
         font-size: 0.9em;
+
     }
     .Register-text{
         text-decoration: none;
         text-align: center;
         margin-top: 15px;
         font-size: 0.9em;
+
     }
     .Register-text a{
         color: #000;
+        font-size: 20px;
+        text-align: center;
+        margin: 0%;
+
+    }
+    .google-login {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .google-bt{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      width: 100%;
+      height: 50px;
+      padding: 10px;
+      background-color: white;
+      color: #444;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: 500;
+      margin-top: 25px;
+    }
+
+    .google-bt img {
+      width: 30px;
+      height: 30px;
     }
 </style>
