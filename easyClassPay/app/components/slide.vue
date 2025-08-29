@@ -18,10 +18,10 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const slideImages = [
-    '/background.png',
-    '/Details-logo.png',
-    '/background.png',
-    '/Details-logo.png'
+    '/ADS1.png',
+    '/ADS1.png',
+    '/ADS1.png',
+    '/ADS1.png'
 ];
 
 const currentSlide = ref(0);
