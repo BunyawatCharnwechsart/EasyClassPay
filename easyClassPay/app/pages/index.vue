@@ -4,7 +4,7 @@
     <div class="login-box">
     <h1>เข้าสู่ระบบ</h1>
     <form action="" method="post">
-     <label for="username">ชื่อผู้ใช้ /อีเมล /หมายเลขโทรศัพท์</label>
+      <label for="username">ชื่อผู้ใช้ /อีเมล /หมายเลขโทรศัพท์</label>
       <input type="text" name="username" required>
 
       <label for="password">รหัสผ่าน</label>
@@ -18,10 +18,11 @@
       </div>
 
       <div class="google-login">
-      <button type="button" class="google-bt">
-      <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo"> ล็อกอินด้วย Google
-      </button>
+        <button type="button" class="google-bt">
+        <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo"> ล็อกอินด้วย Google
+        </button>
       </div>
+    </form>
     </div>
 
 </div>
