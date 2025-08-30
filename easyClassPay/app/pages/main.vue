@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <nav>
             <Navbar />
         </nav>
@@ -12,13 +13,18 @@
             <menuui />
         </div>
 
+        <div>
+            <about />
+        </div>
+
     </div>
 </template>
 
 <script setup>
-import slide from '~/components/slide.vue';
+import slide from '~/components/main/slide.vue';
 import Navbar from '~/components/navbar.vue';
-import menuui from '~/components/menuui.vue';
+import menuui from '~/components/main/menuui.vue';
+import about from '~/components/about.vue';
 
 
 useHead({
