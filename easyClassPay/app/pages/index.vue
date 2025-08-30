@@ -93,8 +93,8 @@ useHead({
     border: 2px solid #000;
     padding: 40px 30px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
-    width: 450px;
-    height: 750px;
+    width: 350px;
+    height: 650px;
     box-sizing: border-box;
     color: #000;
     margin: 0; 
