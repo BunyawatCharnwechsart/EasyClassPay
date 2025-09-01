@@ -19,9 +19,9 @@
 
     const slideImages = [
         '/ADS1.png',
-        '/ADS1.png',
-        '/ADS1.png',
-        '/ADS1.png'
+        '/ADS2.png',
+        '/ADS3.png',
+        '/ADS4.png'
     ];
 
     const currentSlide = ref(0);
@@ -34,7 +34,7 @@
 
     // ตั้ง Interval ให้สไลด์เปลี่ยนอัตโนมัติทุก 2 วิ
     onMounted(() => {
-        slideInterval = setInterval(nextSlide, 5000);
+        slideInterval = setInterval(nextSlide, 2000);
     });
 
     // ล้าง Interval เวลา Component ถูกทำลาย

@@ -1,12 +1,31 @@
 <template>
 
     <footer>
-        <div class="container">
-            <img src="/Bear.png" alt="Bear">
+        <div class="head-footer">
+            <img src="\Bear.png">
             <h1>EasyClassPay</h1>
+            
         </div>
-        <p>เกี่ยวกับ</p>
-        <div class="list">
+        
+        <div class="text-about">
+            <p>เกี่ยวกับเรา</p>
+            <p>ช่องทางติดต่อ</p>
+        </div>
+
+        <div class="textInAbout">
+            <div class="about-text">
+                <p>หน้าเกี่ยวกับเรา</p>
+                <p>หน้าติดต่อเรา</p>
+                <p>หน้าเงื่อนไขการใช้งาน</p>
+                <p>นโยบายความเป็นส่วนตัว</p>
+                <p>คำถามที่พบบ่อย</p>
+            </div>
+
+            <div class="link">
+                <img src="/facebook.png">
+                <img src="/line.png">
+                <img src="/email.png">
+            </div>
         </div>
     </footer>
 
@@ -26,25 +45,49 @@
         background-color: black;
         border-radius: 16px 16px 0px 0px;
         height: 50vh;
-        padding-top: 100px;
+        padding: 50px;
+        gap: 2rem;
     }
 
-    .container {
+    .head-footer {
         display: flex;
-        justify-content: center;
-        gap: 20px;
-        color: white;
+        color : white;
+        gap: 1rem;
     }
 
-    h1 {
-        text-align: center;
-        color: white;
+    .text-about {
+        display: flex;
+        color : white;
+        justify-content: space-between;
     }
 
-    p {
-        color: white;
-        font-size: 24px;
+    .text-about p {
+        padding: 0rem 10rem 0rem 5rem;
+        font-weight: bold;
+        font-size : 24px;
     }
 
+    .textInAbout {
+        display: flex;
+        justify-content: space-between;
+        padding: 0rem 8rem 0rem 5rem;
+    }
 
+    .about-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        color : white;
+    }
+
+    .link {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .link img {
+        cursor: pointer;
+        width: 45px;
+        height: 45px;
+    }
 </style>

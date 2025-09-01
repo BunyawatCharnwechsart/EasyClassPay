@@ -1,20 +1,19 @@
 <template>
-
     <div>
         <navbar />
         <headtext />
-        <entername />
-        <seclectPay />
-        <listName />
+        <div class="block-CB">
+            <createBillBox />
+            <seclectPay />
+        </div>
         <about />
-    </div>
-     
+    </div>     
 </template>
 
 <script setup>
+import navbar from '~/components/navbar.vue';
 import headtext from '~/components/createBill/headtext.vue';
-import entername from '~/components/createBill/entername.vue';
-import listName from '~/components/createBill/listName.vue';
+import createBillBox from '~/components/createBill/createBillBox.vue';
 import about from '~/components/about.vue';
 import seclectPay from '~/components/seclectPay.vue';
 
@@ -34,4 +33,9 @@ useHead({
         font-family: 'Bai Jamjuree', sans-serif;
     }
 
+    .block-CB {
+        display: flex;
+        margin-top: 1%;
+        margin-left: 8%;
+    }
 </style>
