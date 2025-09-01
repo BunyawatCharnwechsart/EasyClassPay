@@ -4,7 +4,7 @@
 
         <div class="head">
             <img src="/LOGO.png" alt="LOGO">
-            <nuxt-link to="/main"><h1>Easy Class Pay</h1></nuxt-link>
+            <nuxt-link to="/main"><p>Easy Class Pay</p></nuxt-link>
         </div>
 
         <ul class="list-menu">
@@ -54,6 +54,10 @@ useHead({
     .head {
         display: flex;
         gap: 40px;
+    }
+
+    .head p {
+        font-weight: bold;
     }
 
     .head img {

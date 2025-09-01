@@ -1,25 +1,22 @@
 <template>
 
     <div>
-        <nav>
-            <Navbar />
-        </nav>
-
-        <header>
-            <headtext />
-        </header>
-
-        <section>
-            <entername />
-        </section>
-
+        <navbar />
+        <headtext />
+        <entername />
+        <seclectPay />
+        <listName />
+        <about />
     </div>
-
+     
 </template>
 
 <script setup>
 import headtext from '~/components/createBill/headtext.vue';
 import entername from '~/components/createBill/entername.vue';
+import listName from '~/components/createBill/listName.vue';
+import about from '~/components/about.vue';
+import seclectPay from '~/components/seclectPay.vue';
 
 useHead({
   link: [
@@ -36,4 +33,5 @@ useHead({
     * {
         font-family: 'Bai Jamjuree', sans-serif;
     }
+
 </style>
