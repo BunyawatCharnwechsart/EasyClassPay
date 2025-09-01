@@ -1,201 +1,203 @@
 <template>
+  <div class="container">
 
-<div class="bg-color">
-    <div class="container">
-        <h1>สร้างบัญชีใหม่</h1>
-         <div class="form-group">
-          <input type="text" placeholder="ชื่อผู้ใช้" v-model="username" />
+    <!-- Register Form -->
+    <div class="form-box">
+      
+      <h2>สร้างบัญชีใหม่</h2>
+      <p>กรุณาใส่ข้อมูลเพื่อทำการสมัครสมาชิกผู้ใช้</p>
+      <form @submit.prevent="register">
+        <label>ชื่อผู้ใช้</label>
+        <input v-model="form.username" type="text" placeholder="กรุณากรอกชื่อผู้ใช้" required />
+
+        <div class="row">
+          <div class="col">
+            <label>ชื่อจริง</label>
+            <input v-model="form.firstname" type="text" placeholder="กรุณากรอกชื่อจริง" required />
+          </div>
+
+          <div class="col">
+            <label>นามสกุล</label>
+            <input v-model="form.lastname" type="text" placeholder="กรุณากรอกนามสกุล" required />
+          </div>
         </div>
 
-        <div class="form-group">
-        <input type="text" placeholder="ชื่อ-นามสกุล" v-model="fullname" />
-        </div>
+        <label>อีเมล</label>
+        <input v-model="form.email" type="email" placeholder="กรุณากรอกอีเมล" required />
 
-        <div class="form-group">
-        <input type="email" placeholder="อีเมล" v-model="email" />
-        </div>
+        <label>รหัสผ่าน</label>
+        <input v-model="form.password" type="password" placeholder="กรุณากรอกรหัสผ่าน" required />
 
-        <div class="form-group">
-        <input type="password" placeholder="รหัสผ่าน" v-model="password" />
-        </div>
-
-        <div class="form-group">
-        <label><b>Date of birth</b></label>
+        <label>วันเกิด</label>
         <div class="dob">
+          <select v-model="form.day" required>
+            <option value="">วัน</option>
+            <option v-for="d in 31" :key="d" :value="d">{{ d }}</option>
+          </select>
 
-        <!-- วัน -->
-        <select id="day" v-model="day">
-            <option value="" disabled selected hidden>วัน</option>
-            <option v-for="d in daysInMonth" :key="d" :value="d">{{ d }}</option>
-        </select>
+          <select v-model="form.month" required>
+            <option value="">เดือน</option>
+            <option v-for="(m, index) in months" :key="index" :value="index + 1">
+              {{ m }}
+            </option>
+          </select>
 
-        <!-- เดือน -->
-        <select id="month" v-model="month">
-            <option value="" disabled selected hidden>เดือน</option>
-            <option v-for="(m, index) in months" :key="index" :value="index+1">{{ m }}</option>
-        </select>
-
-        <!-- ปี -->
-        <select id="year" v-model="year">
-            <option value="" disabled selected hidden>ปี</option>
+          <select v-model="form.year" required>
+            <option value="">ปี</option>
             <option v-for="y in years" :key="y" :value="y">{{ y }}</option>
-        </select>
+          </select>
         </div>
 
-        </div>
-        <button class="btn" @click="register">ลงทะเบียน</button>
-        <div class="login-text">
-            <NuxtLink to="/" class="login-link">เข้าสู่ระบบ</NuxtLink>
-        </div>
-    
+        <button type="submit" class="btn">ลงทะเบียน</button>
+      </form>
+      <a href="/" class="login-link">เข้าสู่ระบบ</a>
     </div>
-</div>
+  </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      username: "",
-      fullname: "",
-      email: "",
-      password: "",
-      day: "",
-      month: "",
-      year: "",
-      months: [
-        "มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน",
-        "กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม"
-      ]
-    };
-  },
-  computed: {
-    years() {
-      const currentYear = new Date().getFullYear();
-      let arr = [];
-      for (let y = currentYear; y >= 1900; y--) {
-        arr.push(y);
-      }
-      return arr;
-    },
-    daysInMonth() {
-      if (!this.month || !this.year) return Array.from({ length: 31 }, (_, i) => i + 1);
-      return Array.from({ length: new Date(this.year, this.month, 0).getDate() }, (_, i) => i + 1);
-    }
-  },
-  methods: {
-    register() {
-      alert(`สมัครสมาชิก: 
-        ชื่อผู้ใช้: ${this.username}
-        ชื่อ-นามสกุล: ${this.fullname}
-        อีเมล: ${this.email}
-        วันเกิด: ${this.day}/${this.month}/${this.year}`);
-    }
-  }
+<script setup>
+import { ref } from "vue";
+
+const form = ref({
+  username: "",
+  firstname: "",
+  lastname: "",
+  email: "",
+  password: "",
+  day: "",
+  month: "",
+  year: "",
+});
+
+const months = [
+  "มกราคม",
+  "กุมภาพันธ์",
+  "มีนาคม",
+  "เมษายน",
+  "พฤษภาคม",
+  "มิถุนายน",
+  "กรกฎาคม",
+  "สิงหาคม",
+  "กันยายน",
+  "ตุลาคม",
+  "พฤศจิกายน",
+  "ธันวาคม",
+];
+
+const years = [];
+const yearNow = new Date().getFullYear();
+for (let y = yearNow; y >= 1950; y--) {
+  years.push(y);
 }
-useHead({
-  link: [
-    {
-      rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-    }
-  ]
-})
+
+function register() {
+  alert(`สมัครสมาชิกสำเร็จ!\nชื่อ: ${form.value.firstname} ${form.value.lastname}`);
+}
+
 </script>
 
-<style>
-*{
-    font-family: 'Bai Jamjuree', sans-serif;
-}
-
-.bg-color {
+<style scoped>
+body {
   margin: 0;
-  background-image: url(/BGcolor.png);
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  font-family: Tahoma, sans-serif;
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.4);
-  padding: 40px;
-  border: 1px solid #333;
-  border-radius: 5px;
-  box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
-  width: 800px;
-  height: 600px;
+  background: url(/BGcolor.png) no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh;
+  gap: 50px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.form-box {
+  position: fixed;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  max-width: 90%;
+}
+
+
+
+.form-box h2 {
+  margin: 0 0 10px 0;
   text-align: center;
-
 }
-.container h2 {
+
+.form-box p {
+  font-size: 14px;
+  text-align: center;
+  color: #555;
   margin-bottom: 20px;
-  font-weight: bold;
 }
 
-.form-group {
+label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
   margin-bottom: 15px;
-  text-align: left;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
-input, select {
-  width: 776px;
-  height: 20px;
-  padding: 12px;
-  border: 1px solid #aaa;
-  border-radius: 5px;
-  font-size: 17px;
-  margin-top: 20px;
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.col {
+  flex: 1;
 }
 
 .dob {
   display: flex;
   gap: 10px;
-
 }
 
 .dob select {
   flex: 1;
-  font-size: 17px;
-  height: 50px;
 }
 
 .btn {
-  width: 350px;
-  height: 60px;
-  background-color: #0b9e3f;
-  border: none;
-  color: white;
+  width: 100%;
   padding: 12px;
-  font-size: 18px;
-  border-radius: 7px;
+  border: none;
+  border-radius: 8px;
+  background: #28a745;
+  color: #fff;
+  font-size: 16px;
   cursor: pointer;
-  font-weight: bold;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .btn:hover {
-  background-color: #088c36;
-}
-
-select {
-  color: #555;
-}
-
-select option[disabled][hidden] {
-  color: #aaa;
+  background: #218838;
 }
 
 .login-link {
-  color: black;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.login-text{
+  margin-top: 15px;
+  font-size: 80%;
+  display: block;
   text-align: center;
-  margin-top: 8px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
 }
-
 </style>
