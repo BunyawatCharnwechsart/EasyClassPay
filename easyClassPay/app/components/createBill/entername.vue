@@ -4,12 +4,12 @@
        <div class="block"></div>
        <div class="main-block">
             <div class="block-input">
-                <h1>ชื่อบิล</h1>
+                <p>ชื่อบิล</p>
                 <input type="text" placeholder="ตั้งชื่อบิลให้พี่หมีหน่อย">
             </div>
 
             <div class="block-input">
-                <h1>ยอดบิล</h1>
+                <p>ยอดบิล</p>
                 <input type="text" placeholder="กรุณาใส่ยอดเงิน">
             </div>
         </div>
@@ -45,14 +45,15 @@
         padding: 60px;
     }
 
+    .main-block p {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
     .block-input {
         display: flex;
         flex-direction: row;
         gap: 20px;
-    }
-    
-    .block-input h1 {
-        font-size: 36px;
     }
 
     input {
