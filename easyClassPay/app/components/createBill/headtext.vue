@@ -20,15 +20,13 @@ useHead({
 
 <style scoped>
     *{
-        margin: 0px;
         padding-top: 1%;
-        box-sizing: border-box;
     }
 
     .head-text {
         display: flex;
         align-items: baseline;
-        padding-left: 6%;
+        padding-left: 8%;
         gap: 10px;
     }
 
