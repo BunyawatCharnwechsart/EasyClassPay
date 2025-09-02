@@ -35,7 +35,8 @@ useHead({
 
     .block-CB {
         display: flex;
+        gap: 2%;
         margin-top: 1%;
-        margin-left: 8%;
+        margin-left: 5%;
     }
 </style>
