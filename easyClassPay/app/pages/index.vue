@@ -94,7 +94,7 @@ useHead({
   background: #ffffff;
   padding: 30px 25px;
   width: 550px;
-  height: 700px;
+  height: 685px;
   max-width: 650px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
@@ -214,7 +214,7 @@ useHead({
   gap: 15px;
   cursor: pointer;
   transition: 0.3s ease;
-  margin-bottom: 95px;
+  margin-bottom: 90px;
 }
 
 .google-login-button img {
