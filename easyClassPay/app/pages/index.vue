@@ -9,7 +9,6 @@
         <input type="text" name="username" placeholder="กรุณากรอกชื่อผู้ใช้" required />
 
         <label for="password">รหัสผ่าน</label>
-
         <div class="password-wrapper">
           <input
             :type="showPassword ? 'text' : 'password'"
@@ -56,7 +55,6 @@ const togglePassword = () => {
 }
 
 const loginWithGoogle = () => {
-  // เพิ่ม logic สำหรับ login ด้วย Google ที่นี่
   alert('Login with Google clicked')
 }
 
@@ -79,51 +77,57 @@ useHead({
 }
 
 .BG {
-  background-color: #f4b943;
-  height: 100vh;
+  background-image: url(/loginBG.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+
+
+  min-height: 100vh;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 150px;
+  padding: 20px 60px;
 }
 
 .login-box {
   background: #ffffff;
-  padding: 40px 30px;
-  width: 650px;
-  height: 900px;
-  box-sizing: border-box;
+  padding: 30px 25px;
+  width: 550px;
+  height: 700px;
+  max-width: 650px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
+  border-radius: 12px;
   color: #000;
+  margin-right: 100px;
 }
 
 .login-box h1 {
   text-align: center;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 32px;
   margin-bottom: 8px;
+  margin-top: 35px;
 }
 
 .login-box p {
   text-align: center;
-  font-weight: 400;
-  font-size: 14px;
-  margin-bottom: 40px;
+  font-size: 18px;
+  margin-bottom: 30px;
   color: #555;
 }
 
 .login-box label {
   display: block;
   font-weight: 500;
-  font-size: 14px;
-  margin-bottom: 6px;
+  font-size: 18px;
+  margin-bottom: 18px;
 }
 
 .login-box input[type='text'],
 .login-box input[type='password'] {
   width: 100%;
-  height: 55px;
+  height: 50px;
   padding: 0 15px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
@@ -138,41 +142,42 @@ useHead({
 
 .password-wrapper input {
   width: 100%;
-  height: 55px;
+  height: 50px;
   padding: 0 45px 0 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 16px;
-  color: #333;
 }
 
 .toggle-btn {
   position: absolute;
   right: 12px;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-  display: flex;
-  align-items: center;
 }
 
 .eye-icon {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
+  width: 25px;
+  height: 25px;
 }
 
 .forgot-password {
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
+  margin-top: 10px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   color: #ff0000;
   cursor: pointer;
   text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
 }
 
 .login-box input[type='submit'] {
@@ -185,7 +190,8 @@ useHead({
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  margin-top: 8px;
   transition: background-color 0.3s ease;
 }
 
@@ -204,17 +210,16 @@ useHead({
   color: #444;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding-left: 15px;
+  justify-content: center;
+  gap: 15px;
   cursor: pointer;
-  box-sizing: border-box;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-  margin-bottom: 35px;
+  transition: 0.3s ease;
+  margin-bottom: 95px;
 }
 
 .google-login-button img {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
 }
 
 .google-login-button:hover {
@@ -236,4 +241,5 @@ useHead({
 .register-link:hover {
   text-decoration: underline;
 }
+
 </style>
