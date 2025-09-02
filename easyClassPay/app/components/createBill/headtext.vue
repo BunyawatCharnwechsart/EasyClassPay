@@ -1,8 +1,14 @@
 <template>
 
     <div class="head-text">
-        <h1>สร้างบิลเก็บตังค์</h1>
-        <p>ไม่ต้องคิดเยอะเดี๋ยวพี่หมีช่วยเก็บในนะค้าบบ </p>
+        <div class="img-HT">
+            <img src="/bell.png">
+        </div>
+
+        <div class="text-HT">
+            <h1>สร้างบิลเก็บตังค์</h1>
+            <p>ไม่ต้องคิดเยอะเดี๋ยวพี่หมีช่วยเก็บในนะค้าบบ</p>
+        </div>
     </div>
 
 </template>
@@ -19,25 +25,18 @@ useHead({
 </script>
 
 <style scoped>
-    *{
-        padding-top: 1%;
-    }
 
     .head-text {
+        padding-top : 1%;
+        padding-left: 5%;
         display: flex;
-        align-items: baseline;
-        padding-left: 8%;
+        gap: 3%;
+    }
+
+    .text-HT {
+        display: flex;
         gap: 10px;
-    }
-
-    .head-text h1 {
-        font-size: 24px;
-        margin: 0;
-    }
-
-    .head-text p {
-        font-size: 18px;
-        margin: 0;
+        align-items: baseline; /* ทำให้ h1 และ p อยู่ baseline เดียวกัน */
     }
 
 </style>
