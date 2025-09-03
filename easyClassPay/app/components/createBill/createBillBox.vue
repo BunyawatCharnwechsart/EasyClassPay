@@ -1,59 +1,72 @@
 <template>
     
-    <div class="container-createCBB">
-        <div class="block-createCBB"></div>
-        <div class="block-input">
-            <div class="create-input">
-                <p>ชื่อบิล</p>
-                <input type="text" placeholder="ตั้งชื่อบิลให้พี่หมีหน่อยครับ">    
-            </div>
-            <div class="create-input">
-                <p>ยอดบิล</p>
-                <input type="text" placeholder="กรุณณาใส่ยอดเงิน"> 
+    <div class="container-CBB">
+        <div class="createBill">
+            <div class="block-createCBB"></div>
+            <div class="block-input">
+                <div class="inputCBB">
+                    <p>ชื่อบิล</p>
+                    <input type="text" placeholder="ตั้งชื่อบิลให้พี่หมีหน่อย">
+                </div>
+                <div class="inputCBB">
+                    <p>ยอดบิล</p>
+                    <input type="text" placeholder="กรุณาใส่ยอดเงินให้พี่หมีหน่อย">
+                </div>
             </div>
         </div>
     </div>
+    
+        
+    
+
 
 </template>
 
 <style scoped>
-    .container-createCBB {
+
+    .container-CBB {
+        width: 65%;
+    }
+
+    .createBill {
         background: white;
         box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         border-radius: 12px;
-        width: 65%;
+        width: 100%;
     }
-    
+
     .block-createCBB {
         background: #FFC93F;
         height: 49px;
         border-radius: 10px 10px 100px 100px;
     }
-
+    
     .block-input {
         display: flex;
         justify-content: space-between;
-        padding: 30px;
-        flex-wrap: wrap;
     }
 
-    .create-input {
+    .inputCBB {
         display: flex;
-        gap: 20px;
+        justify-content: space-between;
+        gap: 30px;
+        padding: 50px;
     }
 
-    .create-input p {
+    .inputCBB p {
         font-weight: bold;
-        font-size: 26px;
+        font-size: 30px;
     }
 
-    .create-input input {
-        height: 60px;
-        width: 285px;
+    .inputCBB input {
         border-radius: 10px;
-        border: 1px solid #159448;
+        border:1px solid #159448;
+        height: 60px;
+        width: 280px;
         text-align: center;
-        font-size: 20px;
+        font-size: 18px;
     }
+
+
 
 </style>
