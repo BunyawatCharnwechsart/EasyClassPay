@@ -19,7 +19,7 @@
             title: 'สร้างบิลเก็บตังค์',
             desc: 'ไม่ต้องคิดเยอะเดี๋ยวพี่หมี <br> ช่วยเก็บในนะค้าบบ',
             bgColor: '#FFC93F',
-            link: '/create-bill'
+            link: '/createBill'
         },
         {
             img: '/createbill.png',
