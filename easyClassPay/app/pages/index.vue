@@ -163,6 +163,7 @@ useHead({
 .eye-icon {
   width: 25px;
   height: 25px;
+  margin-bottom: 10px;
 }
 
 .forgot-password {
