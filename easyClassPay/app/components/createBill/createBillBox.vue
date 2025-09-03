@@ -14,6 +14,21 @@
                 </div>
             </div>
         </div>
+
+        <div class="friends-bill">
+            <div class="head-list">
+                <p>รายชื่อที่อยู่ในบิล</p>
+                <button><img src="/plus.png">เพิ่มเพื่อน</button>
+            </div>
+
+            <div class="gray-block">
+                <p>ชื่อ/อีเมล</p>
+            </div>
+
+            <div class="list-friend">
+
+            </div>
+        </div>
     </div>
     
         
@@ -67,6 +82,48 @@
         font-size: 18px;
     }
 
+    .friends-bill {
+        background: white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 12px;
+        width: 100%;
+        margin-top: 20px;
+    }
 
+    .head-list {
+        display: flex;
+        padding: 30px;
+        justify-content: space-between;
+        font-size: 24px;
+    }
 
+    .head-list button {
+        cursor: pointer;
+        font-size: 24px;
+        height: 45px;
+        width: 150px;
+        border: none;
+        border-radius: 10px;
+        background: #FFBC12;
+    }
+
+    .head-list button img {
+        padding-right: 10px;
+    }
+
+    .gray-block {
+        margin: 0px 20px 0px 20px;
+        background: #EBEBEB;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .gray-block p {
+        padding: 30px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .list-friend {
+        height: 70vh;
+    }
 </style>

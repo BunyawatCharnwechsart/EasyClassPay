@@ -35,8 +35,9 @@ import seclectPay from '~/components/seclectPay.vue';
 
     .block-CB {
         display: flex;
-        gap: 2%;
+        gap: 4%;
         margin-top: 1%;
         margin-left: 5%;
+        margin-bottom: 5%;
     }
 </style>
