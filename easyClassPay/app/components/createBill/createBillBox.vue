@@ -5,11 +5,11 @@
             <div class="block-createCBB"></div>
             <div class="block-input">
                 <div class="inputCBB">
-                    <p>ชื่อบิล</p>
+                    <h2>ชื่อบิล</h2>
                     <input type="text" placeholder="ตั้งชื่อบิลให้พี่หมีหน่อย">
                 </div>
                 <div class="inputCBB">
-                    <p>ยอดบิล</p>
+                    <h2>ยอดบิล</h2>
                     <input type="text" placeholder="กรุณาใส่ยอดเงินให้พี่หมีหน่อย">
                 </div>
             </div>
@@ -59,25 +59,21 @@
     .block-input {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     .inputCBB {
         display: flex;
         justify-content: space-between;
         gap: 30px;
-        padding: 50px;
-    }
-
-    .inputCBB p {
-        font-weight: bold;
-        font-size: 30px;
+        padding: 50px;   
     }
 
     .inputCBB input {
         border-radius: 10px;
         border:1px solid #159448;
         height: 60px;
-        width: 280px;
+        width: 250px;
         text-align: center;
         font-size: 18px;
     }
