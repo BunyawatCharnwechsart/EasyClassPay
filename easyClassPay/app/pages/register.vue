@@ -41,11 +41,11 @@
             placeholder="กรุณากรอกรหัสผ่าน"
             required
           />
-          <button type="button" class="toggle-btn" @click="togglePassword">
+          <button type="button" class="eye-btn" @click="togglePassword">
             <img
               :src="showPassword ? '/view.png' : '/hide.png'"
               alt="Toggle Password Visibility"
-              class="eye-icon"
+              class="eyeregister-icon"
             />
           </button>
         </div>
@@ -232,7 +232,7 @@ useHead({
   font-size: 16px;
 }
 
-.toggle-btn {
+.eye-btn {
   position: absolute;
   right: 12px;
   top: 50%;
@@ -243,9 +243,10 @@ useHead({
   padding: 0;
 }
 
-.eye-icon {
+.eyeregister-icon {
   width: 25px;
   height: 25px;
+  margin-bottom: 10px;
 }
 
 .register-box input[type='submit'] {

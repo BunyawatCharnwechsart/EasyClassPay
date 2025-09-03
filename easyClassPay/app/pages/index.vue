@@ -21,7 +21,7 @@
             <img
               :src="showPassword ? '/view.png' : '/hide.png'"
               alt="Toggle Password Visibility"
-              class="eye-icon"
+              class="eyelogin-icon"
             />
           </button>
         </div>
@@ -160,10 +160,10 @@ useHead({
   padding: 0;
 }
 
-.eye-icon {
+.eyelogin-icon {
   width: 25px;
   height: 25px;
-  margin-bottom: 10px;
+  margin: ;
 }
 
 .forgot-password {
