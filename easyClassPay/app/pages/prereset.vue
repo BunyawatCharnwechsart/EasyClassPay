@@ -4,28 +4,50 @@
       <h1>ทำการรีเซ็ตรหัสผ่าน</h1>
       <p>กรุณากรอกอีเมลเพื่อทำการรีเซ็ตรหัสผ่าน</p>
 
-      <form action="" method="post">
+      <form @submit.prevent="handleSubmit">
         <label for="email">อีเมล</label>
         <input
           type="email"
-          name="email"
+          v-model="email"
           placeholder="กรุณากรอกอีเมล"
           required
         />
+        
+        <div class="form-bottom">
+          <button
+            type="submit"
+            class="submit-prereset"
+            :disabled="!isValidEmail"
+          >
+            ส่งรหัสผ่านทางอีเมล
+          </button>
+        </div>
       </form>
 
-      <div class="form-bottom">
-        <button type="submitreset" class="submit-prereset" @click="() => navigateTo('/reset')">ส่งรหัสผ่านทางอีเมล</button>
-        <div class="login-text">
-          <NuxtLink to="/" class="login-link">เข้าสู่ระบบ</NuxtLink>
-        </div>
+      <div class="login-text">
+        <NuxtLink to="/" class="login-link">เข้าสู่ระบบ</NuxtLink>
       </div>
-
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
+
+const email = ref('')
+const router = useRouter()
+
+const isValidEmail = computed(() => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return regex.test(email.value)
+})
+
+const handleSubmit = () => {
+  if (isValidEmail.value) {
+    router.push('/reset')
+  }
+}
 useHead({
   link: [
     {
