@@ -15,7 +15,7 @@
       </form>
 
       <div class="form-bottom">
-        <button type="submit" class="submit-prereset">ส่งรหัสผ่านทางอีเมล</button>
+        <button type="submitreset" class="submit-prereset" @click="() => navigateTo('/reset')">ส่งรหัสผ่านทางอีเมล</button>
         <div class="login-text">
           <NuxtLink to="/" class="login-link">เข้าสู่ระบบ</NuxtLink>
         </div>
@@ -78,7 +78,7 @@ useHead({
 .reset-box p {
     text-align: center;
     font-size: 16px;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     color: #555;
 }
 
@@ -100,7 +100,7 @@ useHead({
     color: #333;
 }
 
-.reset-box input[type='submit'] {
+.reset-box input[type='submitreset'] {
     width: 100%;
     height: 48px;
     background-color: #159448;
@@ -112,6 +112,7 @@ useHead({
     cursor: pointer;
     margin-bottom: 18px;
     transition: background-color 0.3s ease;
+    
 }
 
 .reset-box input[type='submit']:hover {
@@ -133,6 +134,7 @@ useHead({
   border-radius: 8px;
   cursor: pointer;
   margin-bottom: 18px;
+  margin-top: 70%;
   transition: background-color 0.3s ease;
 }
 
