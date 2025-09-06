@@ -4,28 +4,50 @@
       <h1>ทำการรีเซ็ตรหัสผ่าน</h1>
       <p>กรุณากรอกอีเมลเพื่อทำการรีเซ็ตรหัสผ่าน</p>
 
-      <form action="" method="post">
+      <form @submit.prevent="handleSubmit">
         <label for="email">อีเมล</label>
         <input
           type="email"
-          name="email"
+          v-model="email"
           placeholder="กรุณากรอกอีเมล"
           required
         />
+        
+        <div class="form-bottom">
+          <button
+            type="submit"
+            class="submit-prereset"
+            :disabled="!isValidEmail"
+          >
+            ส่งรหัสผ่านทางอีเมล
+          </button>
+        </div>
       </form>
 
-      <div class="form-bottom">
-        <button type="submit" class="submit-prereset">ส่งรหัสผ่านทางอีเมล</button>
-        <div class="login-text">
-          <NuxtLink to="/" class="login-link">เข้าสู่ระบบ</NuxtLink>
-        </div>
+      <div class="login-text">
+        <NuxtLink to="/" class="login-link">เข้าสู่ระบบ</NuxtLink>
       </div>
-
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
+
+const email = ref('')
+const router = useRouter()
+
+const isValidEmail = computed(() => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return regex.test(email.value)
+})
+
+const handleSubmit = () => {
+  if (isValidEmail.value) {
+    router.push('/reset')
+  }
+}
 useHead({
   link: [
     {
@@ -78,7 +100,7 @@ useHead({
 .reset-box p {
     text-align: center;
     font-size: 16px;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     color: #555;
 }
 
@@ -100,7 +122,7 @@ useHead({
     color: #333;
 }
 
-.reset-box input[type='submit'] {
+.reset-box input[type='submitreset'] {
     width: 100%;
     height: 48px;
     background-color: #159448;
@@ -112,6 +134,7 @@ useHead({
     cursor: pointer;
     margin-bottom: 18px;
     transition: background-color 0.3s ease;
+    
 }
 
 .reset-box input[type='submit']:hover {
@@ -133,6 +156,7 @@ useHead({
   border-radius: 8px;
   cursor: pointer;
   margin-bottom: 18px;
+  margin-top: 70%;
   transition: background-color 0.3s ease;
 }
 
