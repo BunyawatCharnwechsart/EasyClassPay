@@ -1,22 +1,10 @@
 <template>
     <div>
-
-        <nav>
-            <Navbar />
-        </nav>
-
-        <div>
-            <slide />
-        </div>
-
-        <div>
-            <menuui />
-        </div>
-
-        <div>
-            <about />
-        </div>
-
+        <Navbar />
+        <slide />
+        <menuui />
+        <totorial />
+        <about />
     </div>
 </template>
 
@@ -25,6 +13,7 @@ import slide from '~/components/main/slide.vue';
 import Navbar from '~/components/navbar.vue';
 import menuui from '~/components/main/menuui.vue';
 import about from '~/components/about.vue';
+import totorial from '~/components/main/tutorial.vue';
 
 
 useHead({

@@ -32,7 +32,7 @@
     .PayMent-btn {
         display: flex;
         margin: 30px;
-        margin-top: auto;      /* ดันปุ่มไปล่างสุด */
+        margin-top: auto;
     }
 
     .PayMent-btn a {
