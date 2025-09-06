@@ -27,10 +27,10 @@
         </div>
 
         <div class="forgot-password">
-          <NuxtLink to="/remember" class="forgot-password">ลืมรหัสผ่าน</NuxtLink>
+          <NuxtLink to="/prereset" class="forgot-password">ลืมรหัสผ่าน</NuxtLink>
         </div>
 
-        <input type="submit" value="เข้าสู่ระบบ" />
+        <button type="button" class="submit-button" @click="() => navigateTo('/main')">เข้าสู่ระบบ</button>
 
         <button type="button" class="google-login-button" @click="loginWithGoogle">
           <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google Icon" />
@@ -134,6 +134,27 @@ useHead({
   border-radius: 8px;
   font-size: 16px;
   color: #333;
+}
+
+.login-box input[type='submit'],
+.submit-button {
+  width: 100%;
+  height: 50px;
+  background-color: #159448;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 18px;
+  margin-top: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.login-box input[type='submit']:hover,
+.submit-button:hover {
+  background-color: #117834;
 }
 
 .password-wrapper {
