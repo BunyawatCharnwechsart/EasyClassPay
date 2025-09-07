@@ -2,25 +2,33 @@
     <div class="boxPayMent">
         <div class="headbar"><p>เลือกวิธีชำระเงิน</p></div>
 
-        <div class="seclect-banking">
-            <div class="box-seclect">
-                <img src="/bank-logo.png">
-                <p>เลือกธนาคาร</p>
-            </div>
+        <div class="btn-container">
+            <button @click="openPopup"><img src="/bank-logo.png">เลือกธนาคาร</button>
+            
+            <Popup ref="popupRef"></Popup>
+
+            <button><img src="/prompay-logo.png">พร้อมเพย์</button>
+
         </div>
 
-        <div class="seclect-prompay">
-            <div class="box-seclect">
-                <img src="/prompay-logo.png">
-                <p>พร้อมเพย์</p>
-            </div>
-        </div>
-        
         <div class="PayMent-btn">
             <nuxt-link to="/total-bill">ถัดไป <img src="/arrow-r.png"></nuxt-link>
         </div>
     </div>
+
+    
 </template>
+
+<script setup>
+import { ref } from 'vue'
+import Popup from '~/components/model/bank-popup'
+
+const popupRef = ref(null)
+
+function openPopup() {
+  popupRef.value.open()
+}
+</script>
 
 <style scoped>
     .boxPayMent {
@@ -43,18 +51,32 @@
         font-weight: bold;
     }
 
-    .box-seclect {
-        cursor: pointer;
+    .btn-container {
         display: flex;
-        gap: 20px;
+        flex-direction: column;
         margin: 20px;
-        padding: 20px;
-        border: 1px solid black;
-        font-size: 24px;
-        font-weight: bold;
+        gap: 20px;
     }
 
-    .box-seclect img {
+    .btn-container button {
+        border: 1px solid black;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        height: 90px;
+        font-size: 24px;
+        font-weight: bold;
+        background: none;
+        transition: background-color 0.5s ease;
+    }
+
+    .btn-container button:hover {
+        background: #fce0b7;
+    }
+
+    .btn-container button img {
         width: 40px;
         height: 40px;
     }
