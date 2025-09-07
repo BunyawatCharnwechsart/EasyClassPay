@@ -6,11 +6,11 @@
             <div class="block-input">
                 <div class="inputCBB">
                     <h2>ชื่อบิล</h2>
-                    <input type="text" placeholder="ตั้งชื่อบิลให้พี่หมีหน่อย">
+                    <input type="text" placeholder="ตั้งชื่อบิลให้พี่หมีหน่อย" required>
                 </div>
                 <div class="inputCBB">
                     <h2>ยอดบิล</h2>
-                    <input type="text" placeholder="กรุณาใส่ยอดเงินให้พี่หมีหน่อย">
+                    <input type="text" placeholder="กรุณาใส่ยอดเงินให้พี่หมีหน่อย" required>
                 </div>
             </div>
         </div>
