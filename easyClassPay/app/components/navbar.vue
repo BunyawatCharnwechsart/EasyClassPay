@@ -9,7 +9,7 @@
 
         <ul class="list-menu">
             <li><nuxt-link to="/createBill">สร้างบิลเก็บตังค์</nuxt-link></li>
-            <li><nuxt-link to="/printYourSelf">พิมพ์รายการเอง</nuxt-link></li>
+            <li><nuxt-link to="/manualBill">พิมพ์รายการเอง</nuxt-link></li>
             <li><nuxt-link to="/monthlyBill">บิลแบบรายเดือน</nuxt-link></li>
             <li><nuxt-link to="/allBill">บิลทั้งหมด</nuxt-link></li>
         </ul>

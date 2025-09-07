@@ -26,7 +26,7 @@
             title: 'พิมพ์รายการเอง',
             desc: 'จะเก็บเท่าไหร่ <br> ใส่เองได้หมดเลยค้าบบ <br> พี่หมีเก่งอยู่แล้ว',
             bgColor: '#FFBC12',
-            link: '/manual-bill'
+            link: '/manualBill'
         },
         {
             img: '/billM.png',
