@@ -3,9 +3,7 @@
         <div class="headbar"><p>เลือกวิธีชำระเงิน</p></div>
 
         <div class="btn-container">
-            <button @click="openPopup"><img src="/bank-logo.png">เลือกธนาคาร</button>
-            
-            <Popup ref="popupRef"></Popup>
+            <button><img src="/bank-logo.png">เลือกธนาคาร</button>
 
             <button><img src="/prompay-logo.png">พร้อมเพย์</button>
 
@@ -19,16 +17,6 @@
     
 </template>
 
-<script setup>
-import { ref } from 'vue'
-import Popup from '~/components/model/bank-popup'
-
-const popupRef = ref(null)
-
-function openPopup() {
-  popupRef.value.open()
-}
-</script>
 
 <style scoped>
     .boxPayMent {

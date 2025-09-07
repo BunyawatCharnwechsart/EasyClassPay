@@ -23,7 +23,7 @@
 import navbar from '~/components/navbar.vue';
 import createBillBox from '~/components/createBill/createBillBox.vue';
 import about from '~/components/about.vue';
-import seclectPay from '~/components/createBill/seclectPay.vue';
+import seclectPay from '~/components/Payment/seclectPay.vue';
 
     useHead({
     link: [
