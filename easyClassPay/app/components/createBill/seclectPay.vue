@@ -1,6 +1,20 @@
 <template>
     <div class="boxPayMent">
         <div class="headbar"><p>เลือกวิธีชำระเงิน</p></div>
+
+        <div class="seclect-banking">
+            <div class="box-seclect">
+                <img src="/bank-logo.png">
+                <p>เลือกธนาคาร</p>
+            </div>
+        </div>
+
+        <div class="seclect-prompay">
+            <div class="box-seclect">
+                <img src="/prompay-logo.png">
+                <p>พร้อมเพย์</p>
+            </div>
+        </div>
         
         <div class="PayMent-btn">
             <nuxt-link to="/total-bill">ถัดไป <img src="/arrow-r.png"></nuxt-link>
@@ -27,6 +41,22 @@
         text-align: center;
         font-size: 30px;
         font-weight: bold;
+    }
+
+    .box-seclect {
+        cursor: pointer;
+        display: flex;
+        gap: 20px;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid black;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .box-seclect img {
+        width: 40px;
+        height: 40px;
     }
 
     .PayMent-btn {
