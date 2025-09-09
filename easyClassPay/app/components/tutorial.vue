@@ -1,6 +1,7 @@
 <template>
 
     <div class="flex mb-10 h-200 ">
+        <!-- ภาพแนะนำ -->
         <div class="flex w-2/3">
             <div class=" w-screen m-20 ml-5 mr-10">
                 <img
@@ -11,6 +12,7 @@
             </div>
         </div>
 
+        <!-- คำแนะนำ -->
         <div class="bg-[#FFC93F] flex w-1/3 m-20 ml-0 mr-0 rounded-l-4xl">   
             <div class="flex flex-col justify-center ml-15">
                 <p class="text-3xl font-bold mb-5">ยินดีต้อนรับสู่ EasyClassPay</p>
