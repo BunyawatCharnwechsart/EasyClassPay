@@ -40,13 +40,14 @@
             <img class="w-10 h-10 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300" src="/testProfile.png">
         </div>
 
+        <!-- ตัวการแจ้งเตือน -->
         <dialog id="my_modal_1" class="modal">
             <div class="bg-black text-white p-10">
                 <h3 class="text-lg font-bold">Hello!</h3>
                 <p class="py-4">Press ESC key or click the button below to close</p>
                 <div class="modal-action">
                 <form method="dialog">
-                    <!-- if there is a button in form, it will close the modal -->
+                    <!-- ปุ่มปิด -->
                     <button class="btn bg-amber-50 text-black">Close</button>
                 </form>
                 </div>
