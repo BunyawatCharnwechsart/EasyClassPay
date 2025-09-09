@@ -1,6 +1,6 @@
 <template>
     <div class="flex">
-        <nuxt-link v-for="(item, index) in detail" :key="index" class="flex flex-col justify-center items-center gap-4 w-1/3 h-200 cursor-pointer" :class="item.bg" :to="item.link">
+        <nuxt-link v-for="(item, index) in detail" :key="index" class="flex flex-col justify-center items-center gap-4 w-1/3 h-140 cursor-pointer" :class="item.bg" :to="item.link">
                 <img :src="item.img" class="w-30 h-30 object-contain" />
                 <h1 class="font-bold text-4xl mt-10">{{ item.head }}</h1>
                 <p class="text-lg text-center" v-html="item.text"></p>
