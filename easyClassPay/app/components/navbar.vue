@@ -3,7 +3,7 @@
         <!-- โลโก้ -->
         <div class="flex gap-10">
             <img src="/LOGO.png">
-            <nuxt-link class="flex items-center text-2xl ml-7 font-semibold" to="/main">EasyClassPay</nuxt-link>
+            <nuxt-link class="flex items-center text-2xl  ml-7 font-bold" to="/main">EasyClassPay</nuxt-link>
         </div>
 
         <!-- เมนู -->

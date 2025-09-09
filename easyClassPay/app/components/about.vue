@@ -1,6 +1,6 @@
 <template>
 
-    <footer class="bg-black rounded-t-lg p-20 text-white">
+    <footer class="bg-black rounded-t-4xl p-20 text-white">
         <div class="flex items-baseline mb-10 gap-3">
             <img src="/Bear.png">
             <h1 class=" text-4xl">EasyClassPay</h1>
