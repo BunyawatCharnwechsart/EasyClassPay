@@ -32,7 +32,12 @@
                         <!-- หัวข้อ -->
                         <div class="flex justify-between">
                             <h1 class="text-2xl font-semibold">รายชื่อคนที่อยู่ในบิล</h1>
-                            <button class="flex items-center cursor-pointer"><img class="w-5 h-5 mr-1" src="/plus.png">เพิ่มเพื่อน</button>
+                            <button class="flex items-center cursor-pointer bg-[#FFBC12] w-30 h-10 justify-center rounded-xl"><img class="w-5 h-5 mr-1" src="/plus.png">เพิ่มเพื่อน</button>
+                        </div>
+
+                        <!-- แสดงชื่อ -->
+                        <div>
+                            <label for="list-name">ชื่อ/อีเมล</label>
                         </div>
                     </div>
 
