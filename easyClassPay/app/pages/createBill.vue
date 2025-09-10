@@ -1,6 +1,8 @@
 <template>
     <div class="font-Bai-Jamjuree">
+
         <navbar />
+
         <div class="m-10">
             <div class="flex gap-3 items-baseline">
                 <h1 class="text-3xl font-bold">สร้างบิลเก็บตังค์</h1>
@@ -9,8 +11,9 @@
 
             <div class="flex justify-between mt-5 gap-4">
                 <div class="flex flex-col gap-4 w-2/3">
+
                     <!-- ที่กรอกชื่อกับยอดบิล -->
-                    <div class="bg-white shadow-2xl">
+                    <div class="bg-white shadow-xl">
                         <div class="bg-[#FFC93F] h-12 rounded-b-full"></div>
                         <div class="flex justify-between p-10">
 
@@ -28,25 +31,60 @@
                     </div>
 
                     <!-- list ชื่อเพื่อนที่อยู่ในบิล -->
-                    <div class="bg-white shadow-2xl p-5">   
+                    <div class="bg-white shadow-2xl p-5 rounded-xl">   
                         <!-- หัวข้อ -->
-                        <div class="flex justify-between">
+                        <div class="flex justify-between items-center">
                             <h1 class="text-2xl font-semibold">รายชื่อคนที่อยู่ในบิล</h1>
                             <button class="flex items-center cursor-pointer bg-[#FFBC12] w-30 h-10 justify-center rounded-xl"><img class="w-5 h-5 mr-1" src="/plus.png">เพิ่มเพื่อน</button>
                         </div>
 
                         <!-- แสดงชื่อ -->
-                        <div>
-                            <label for="list-name">ชื่อ/อีเมล</label>
+                        <div class="h-150">
+                            <div class="mt-4 p-4 rounded-t-lg bg-[#EBEBEB]">
+                                <label for="list-name" class="ml-1 text-xl">ชื่อ / อีเมล</label>
+                            </div>
+
+                            <!-- ใส่รายชื่อ -->
+                            <div>
+
+                            </div>
                         </div>
                     </div>
 
                 </div>
 
                 <!-- จ่ายเงิน -->
-                <div class="bg-red-500 w-1/3">
-                    <div>
-                        <h1>alsdkaoskd</h1>
+                <div class="bg-white shadow-2xl w-1/3 rounded-2xl">
+                    <div class="flex bg-[#FFBC12] p-10 justify-center shadow-xl rounded-2xl mb-5">
+                        <h1 class="text-3xl font-bold">เลือกวิธีชำระเงิน</h1>
+                    </div>
+
+                    <div class="flex flex-col gap-5 p-5">
+                        <!-- เลือกธนาคาร -->
+                        <div class="p-2 bg-white border-1 border-gray cursor-pointer">
+                            <div class="flex items-center gap-5">
+                                <img src="/bank-logo.png">
+                                <h1>กรุณาเลือกธนาคาร</h1>
+                            </div>
+                            <div class="p-1">
+                                <span>เลือกธนาคารที่ต้องการ</span>
+                            </div>
+                        </div>
+
+                        <!-- พร้อมเพย์ -->
+                        <div class="p-2 bg-white border-1 border-gray cursor-pointer">
+                            <div class="flex items-center gap-5">
+                                <img src="/prompay-logo.png">
+                                <h1>พร้อมเพย์</h1>
+                            </div>
+                            <div class="p-1">
+                                <span>เลือกธนาคารที่ต้องการ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <button class="flex bg-[#FFBC12] w-full h-15">ถัดไป <img src="/arrow-r.png"> </button>
                     </div>
                 </div>
             </div>
