@@ -1,22 +1,31 @@
 <template>
-  <div class="BGreset">
-    <div class="reset-box">
-      <h1>ทำการรีเซ็ตรหัสผ่าน</h1>
-      <p>กรุณากรอกอีเมลเพื่อทำการรีเซ็ตรหัสผ่าน</p>
+  <div
+    class="bg-[url('/loginBG.png')] bg-cover bg-center bg-no-repeat min-h-screen flex justify-end items-center px-16"
+  >
+    <div
+      class="bg-white p-8 w-[550px] h-[685px] max-w-[650px] shadow-lg rounded-xl text-black mr-24 flex flex-col"
+    >
+      <!-- Header -->
+      <h1 class="text-center font-semibold text-2xl mb-2">ทำการรีเซ็ตรหัสผ่าน</h1>
+      <p class="text-center text-base mb-8 text-gray-600">
+        กรุณากรอกอีเมลเพื่อทำการรีเซ็ตรหัสผ่าน
+      </p>
 
-      <form @submit.prevent="handleSubmit">
-        <label for="email">อีเมล</label>
+      <!-- Form -->
+      <form @submit.prevent="handleSubmit" class="flex flex-col flex-1">
+        <label for="email" class="block font-medium text-base mb-2">อีเมล</label>
         <input
           type="email"
           v-model="email"
           placeholder="กรุณากรอกอีเมล"
           required
+          class="w-full h-12 px-4 border border-gray-300 rounded-lg text-base text-gray-700 mb-6 focus:outline-none focus:ring-2 focus:ring-green-500"
         />
-        
-        <div class="form-bottom">
+
+        <div class="mt-auto">
           <button
             type="submit"
-            class="submit-prereset"
+            class="w-full h-12 bg-green-700 text-white font-semibold text-base rounded-lg cursor-pointer transition-colors hover:bg-green-800 disabled:bg-gray-400 disabled:cursor-not-allowed"
             :disabled="!isValidEmail"
           >
             ส่งรหัสผ่านทางอีเมล
@@ -24,18 +33,24 @@
         </div>
       </form>
 
-      <div class="login-text">
-        <NuxtLink to="/" class="login-link">เข้าสู่ระบบ</NuxtLink>
+      <!-- Login Link -->
+      <div class="text-center mt-6">
+        <NuxtLink
+          to="/"
+          class="font-semibold text-base text-black hover:underline"
+        >
+          เข้าสู่ระบบ
+        </NuxtLink>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref, computed } from "vue"
+import { useRouter } from "vue-router"
 
-const email = ref('')
+const email = ref("")
 const router = useRouter()
 
 const isValidEmail = computed(() => {
@@ -45,138 +60,16 @@ const isValidEmail = computed(() => {
 
 const handleSubmit = () => {
   if (isValidEmail.value) {
-    router.push('/reset')
+    router.push("/reset")
   }
 }
+
 useHead({
   link: [
     {
-      rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600&display=swap',
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600&display=swap",
     },
   ],
 })
 </script>
-
-<style scoped>
-* {
-  font-family: 'Bai Jamjuree', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.BGreset{
-    background-image: url(/loginBG.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 20px 60px;
-}
-
-.reset-box{
-    background: #ffffff;
-    padding: 30px 25px;
-    width: 550px;
-    height: 685px;
-    max-width: 650px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 12px;
-    color: #000;
-    margin-right: 100px;
-}
-
-.reset-box h1 {
-    text-align: center;
-    font-weight: 600;
-    font-size: 28px;
-    margin-bottom: 8px;
-}
-
-.reset-box p {
-    text-align: center;
-    font-size: 16px;
-    margin-bottom: 35px;
-    color: #555;
-}
-
-.reset-box label {
-    display: block;
-    font-weight: 500;
-    font-size: 16px;
-    margin-bottom: 6px;
-}
-
-.reset-box input[type='email'] {
-    width: 100%;
-    height: 48px;
-    padding: 0 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    color: #333;
-}
-
-.reset-box input[type='submitreset'] {
-    width: 100%;
-    height: 48px;
-    background-color: #159448;
-    color: white;
-    font-weight: 600;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-bottom: 18px;
-    transition: background-color 0.3s ease;
-    
-}
-
-.reset-box input[type='submit']:hover {
-    background-color: #117834;
-}
-
-.form-bottom {
-  margin-top: auto;
-}
-
-.submit-prereset {
-  width: 100%;
-  height: 48px;
-  background-color: #159448;
-  color: white;
-  font-weight: 600;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-bottom: 18px;
-  margin-top: 70%;
-  transition: background-color 0.3s ease;
-}
-
-.submit-prereset:hover {
-  background-color: #117834;
-}
-
-
-.login-text {
-    text-align: center;
-}
-
-.login-link-reset {
-    font-weight: 600;
-    color: #000;
-    font-size: 16px;
-    text-decoration: none;
-}
-
-.login-link-reset:hover {
-  text-decoration: underline;
-}
-</style>
