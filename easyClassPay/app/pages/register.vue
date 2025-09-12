@@ -5,8 +5,8 @@
     <div
       class="bg-white p-8 w-[550px] h-[685px] max-w-[650px] shadow-lg rounded-xl text-black mr-24"
     >
-      <h1 class="text-center font-semibold text-3xl mb-2">สมัครสมาชิก</h1>
-      <p class="text-center text-lg mb-6 text-gray-600">
+      <h1 class="text-center font-semibold text-3xl mb-0">สมัครสมาชิก</h1>
+      <p class="text-center text-lg mb-4 text-gray-600">
         กรุณากรอกข้อมูลเพื่อทำการสมัครบัญชีผู้ใช้
       </p>
 
@@ -26,7 +26,7 @@
         <!-- First & Last name -->
         <div class="flex gap-3">
           <div class="flex-1">
-            <label class="block font-medium text-lg mb-1">ชื่อจริง</label>
+            <label class="block font-medium text-lg mb-0">ชื่อจริง</label>
             <input
               type="text"
               placeholder="กรุณากรอกชื่อจริง"
@@ -35,7 +35,7 @@
             />
           </div>
           <div class="flex-1">
-            <label class="block font-medium text-lg mb-1">นามสกุล</label>
+            <label class="block font-medium text-lg mb-0">นามสกุล</label>
             <input
               type="text"
               placeholder="กรุณากรอกนามสกุล"
@@ -47,7 +47,7 @@
 
         <!-- Email -->
         <div>
-          <label for="email" class="block font-medium text-lg mb-1">อีเมล</label>
+          <label for="email" class="block font-medium text-lg mb-0">อีเมล</label>
           <input
             type="email"
             name="email"
@@ -59,7 +59,7 @@
 
         <!-- Password -->
         <div>
-          <label for="password" class="block font-medium text-lg mb-1">รหัสผ่าน</label>
+          <label for="password" class="block font-medium text-lg mb-0">รหัสผ่าน</label>
           <div class="relative">
             <input
               :type="showPassword ? 'text' : 'password'"
@@ -116,15 +116,16 @@
         </div>
 
         <!-- Submit -->
-        <input
-          type="submit"
-          value="สมัครสมาชิก"
-          class="w-full h-12 bg-green-700 text-white font-semibold text-base rounded-lg cursor-pointer hover:bg-green-800 transition-colors"
-        />
+        <NuxtLink
+          to="/"
+          class="block w-full h-12 bg-green-700 text-white font-semibold text-base rounded-lg cursor-pointer text-center leading-[3rem] hover:bg-green-800 transition-colors"
+        >
+          สมัครสมาชิก
+        </NuxtLink>
 
         <!-- Login link -->
         <div class="text-center">
-          <NuxtLink to="/" class="font-semibold text-base text-black hover:underline">
+          <NuxtLink to="/" class="font-semibold text-base text-black hover:underline w-full">
             เข้าสู่ระบบ
           </NuxtLink>
         </div>
