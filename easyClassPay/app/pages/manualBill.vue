@@ -1,7 +1,7 @@
 <template>
     <div>
         <navbar />
-
+            
         <about />
     </div>
 </template>
