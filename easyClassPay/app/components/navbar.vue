@@ -70,7 +70,7 @@
 
                         <!-- ออกจากระบบ -->
                         <div class="flex justify-center mb-3">
-                            <button class="cursor-pointer p-3 w-60 rounded-2xl border-2 text-red-500 border-red-500 bg-transparent hover:bg-red-500 hover:text-white transition-colors duration-300">ออกจากระบบ</button>
+                            <button class="cursor-pointer p-3 w-60 rounded-2xl border-2 text-red-500 border-red-500 bg-transparent hover:bg-red-500 hover:text-white hover:shadow-xl hover:shadow-red-500/50 transition-all duration-300">ออกจากระบบ</button>
                         </div>
                     </div>
                 </section>
