@@ -39,7 +39,7 @@
 
                                 <!-- Model ของเพิ่มเพื่อนลงในบิล -->
                                 <dialog id="my_modal_3" class="modal">
-                                    <div class="modal-box bg-white select-none rounded-2xl">
+                                    <div class="modal-box bg-white select-none rounded-2xl font-Bai-Jamjuree">
                                         <form method="dialog">
                                         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                                         </form>
