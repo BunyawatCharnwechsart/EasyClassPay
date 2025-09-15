@@ -48,23 +48,9 @@
                                                 <h3 class="text-xl font-bold">เพิ่มเพื่อนลงในบิล</h3>
                                                 <h2>ใครต้องจ่ายบ้าง</h2>
                                             </div>
-
+                                            
                                             <!-- ค้นหา -->
-                                            <label class="input w-full bg-gray-200 rounded-2xl">
-                                                <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                                    <g
-                                                    stroke-linejoin="round"
-                                                    stroke-linecap="round"
-                                                    stroke-width="2.5"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    >
-                                                    <circle cx="11" cy="11" r="8"></circle>
-                                                    <path d="m21 21-4.3-4.3"></path>
-                                                    </g>
-                                                </svg>
-                                                <input type="search" required placeholder="Search" />
-                                            </label>
+                                            <ModelSearch/>
 
                                             <!-- รายชื่อเพื่อนของฉันที่เพิ่มได้ -->
                                             <div class="flex justify-center items-center h-50">
@@ -104,7 +90,7 @@
 
 
 <script setup>
-
+import ModelSearch from '~/components/ModelSearch.vue';
 import payMent from '~/components/payMent.vue';
 import navbar from '~/components/navbar.vue';
 import about from '~/components/about.vue';
