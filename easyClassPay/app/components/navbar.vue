@@ -9,25 +9,25 @@
         <!-- เมนู span=hover -->
         <ul class="menu menu-horizontal gap-10 mr-auto ml-30">
             <li>
-                <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-500" to="/createBill">
+                <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-300" to="/createBill">
                     สร้างบิลเก็บตังค์
                 <span class="absolute left-0 -bottom-1 w-0 h-[4px] bg-black rounded-full transition-all duration-300 group-hover:w-full"></span>
                 </nuxt-link>
             </li>
             <li>
-                <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-500" to="/manualBill">
+                <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-300" to="/manualBill">
                     พิมพ์รายการเอง
                 <span class="absolute left-0 -bottom-1 w-0 h-[4px] bg-black rounded-full transition-all duration-300 group-hover:w-full"></span>
                 </nuxt-link>
             </li>
             <li>
-                <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-500" to="/monthBill">
+                <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-300" to="/monthBill">
                     บิลแบบรายเดือน
                 <span class="absolute left-0 -bottom-1 w-0 h-[4px] bg-black rounded-full transition-all duration-300 group-hover:w-full"></span>
                 </nuxt-link>
             </li>
             <li>
-                <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-500" to="/allBill">
+                <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-300" to="/allBill">
                 บิลทั้งหมด
                 <span class="absolute left-0 -bottom-1 w-0 h-[4px] bg-black rounded-full transition-all duration-300 group-hover:w-full"></span>
                 </nuxt-link>
@@ -39,7 +39,7 @@
 
             <!-- การแจ้งเตือน -->
             <div class="dropdown dropdown-end">
-            <div tabindex="0"><img class="w-8 h-8 cursor-pointer hover:scale-110 transition-transform duration-300" src="/bell.png"></div>
+            <div tabindex="0"><img class="w-8 h-8 cursor-pointer hover:scale-110 transition-transform duration-100" src="/bell.png"></div>
                 <section tabindex="0" class="dropdown-content menu bg-white rounded-2xl z-auto w-90 h-110 p-5 shadow-xl">
                     <div>
                         <h1 class="flex justify-center text-xl font-bold">การแจ้งเตือนทั้งหมด</h1>
@@ -49,7 +49,7 @@
 
             <!-- โปรไฟล์ -->
             <div class="dropdown dropdown-end">
-                <div tabindex="1"><img class="w-10 h-10 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300" src="/Avatar.png"></div>
+                <div tabindex="1"><img class="w-10 h-10 rounded-full cursor-pointer hover:scale-105 transition-transform duration-100" src="/Avatar.png"></div>
                 <section tabindex="1" class="dropdown-content menu bg-white rounded-2xl z-auto w-90 h-auto shadow-xl">
                     <div class="flex flex-col"> 
 
@@ -65,7 +65,7 @@
 
                         <!-- เพิ่มเพื่อน -->
                         <div class="flex justify-center p-5">
-                            <button class="cursor-pointer flex items-center p-5 pt-2 pb-2 border-1 hover:scale-105 transition-transform duration-300"><img class="w-5 h-5" src="/Addfriend.png">เพิ่มเพื่อน</button>
+                            <button class="cursor-pointer flex items-center p-5 pt-2 pb-2 border-1 hover:scale-105 transition-transform duration-100"><img class="w-5 h-5" src="/Addfriend.png">เพิ่มเพื่อน</button>
                         </div>
 
                         <!-- ออกจากระบบ -->
