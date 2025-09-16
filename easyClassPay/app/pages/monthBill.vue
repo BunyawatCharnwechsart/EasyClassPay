@@ -26,23 +26,23 @@
                     </div>
 
                      <!-- ส่วนของใส่วันที่และรายชื่อที่อยู่ในบิล -->
-                    <div class="flex gap-2">
+                    <div class="flex gap-5">
 
                         <!-- กรอกวันที่ -->
-                        <section class="flex flex-col w-2/5 bg-white shadow-xl/30 p-9 rounded-xl gap-10 h-230">
+                        <section class="flex flex-col w-2/5 bg-white shadow-xl p-9 rounded-xl gap-10 h-230">
 
                             <!-- เริ่มเก็บ,เตือนเวลา -->
-                            <div class="bg-white shadow-md/30 p-9 rounded-xl h-70">
+                            <div class="bg-white shadow-[0_4px_20px_rgba(0,0,0,0.2)] p-9 rounded-xl h-70">
                                 
                             </div>
 
                             <!-- เก็บซ้ำ -->
-                            <div class="bg-white shadow-md/30 p-9 rounded-xl h-30">
+                            <div class="bg-white shadow-[0_4px_20px_rgba(0,0,0,0.2)] p-9 rounded-xl h-30">
                                 
                             </div>
 
                             <!-- จุดสิ้นสุด -->
-                            <div class="bg-white shadow-md/30 p-9 rounded-xl h-30">
+                            <div class="bg-white shadow-[0_4px_20px_rgba(0,0,0,0.2)] p-9 rounded-xl h-30">
                                 
                             </div>
 
@@ -54,7 +54,7 @@
                         </section>
 
                         <!-- รายชื่อที่อยู่ในบิล -->
-                        <section class="w-3/5 bg-white shadow-xl/30 p-9 rounded-xl gap-5 h-230">
+                        <section class="w-3/5 bg-white shadow-xl p-9 rounded-xl gap-5 h-230">
                             
                             <!-- listเพื่อน -->
                             <div class="flex justify-between items-center">
