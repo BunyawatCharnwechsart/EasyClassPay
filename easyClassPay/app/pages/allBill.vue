@@ -29,6 +29,11 @@
                 <div class="w-4/5 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.3)] rounded-2xl">
                     <p class="p-1 pl-5">รายการบิล</p>
                     <div class="h-0.5 w-full bg-gray-200"></div>
+
+                    <!-- show card -->
+                    <section class="p-5">
+                        <ModelCard/>
+                    </section>
                 </div>
 
             </section>
@@ -42,6 +47,7 @@
 <script setup>
 import navbar from '~/components/navbar.vue';
 import about from '~/components/about.vue';
+import ModelCard from '~/components/ModelCard.vue';
 import { ref } from 'vue'
 
 const bills = [
