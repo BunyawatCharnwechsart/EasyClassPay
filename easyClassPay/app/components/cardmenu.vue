@@ -18,18 +18,18 @@ const detail = [
         link: '/createBill'
     },
     {
-        img: '/createbill.png',
-        head: 'พิมพ์รายการเอง',
-        text: 'จะเก็บเท่าไหร่ <br> ใส่เองได้หมดเลยค้าบบ <br> พี่หมีเก่งอยู่แล้ว',
-        bg: 'bg-[#FFBC12]',
-        link: '/manualBill'
-    },
-    {
         img: '/billM.png',
         head: 'บิลแบบรายเดือน',
         text: 'ตั้งครั้งเดียวพี่หมี <br> แจ้งเองตรงเวลาเป๊ะๆ',
-        bg: 'bg-[#FFC93F]',
+        bg: 'bg-[#FFBC12]',
         link: '/monthBill'
+    },
+    {
+        img: '/billM.png',
+        head: 'บิลทั้งหมด',
+        text: 'บิลทั้งหมดที่สร้างพี่หมี <br> เอาไว้ในนี้หมดเลย',
+        bg: 'bg-[#FFC93F]',
+        link: '/allBill'
     }
 ]
 </script>
