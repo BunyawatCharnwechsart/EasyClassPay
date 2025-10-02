@@ -15,6 +15,12 @@
                 </nuxt-link>
             </li>
             <li>
+                <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-300" to="/manualBill">
+                    พิมพ์รายการเอง
+                <span class="absolute left-0 -bottom-1 w-0 h-[4px] bg-black rounded-full transition-all duration-300 group-hover:w-full"></span>
+                </nuxt-link>
+            </li>
+            <li>
                 <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-300" to="/monthBill">
                     บิลแบบรายเดือน
                 <span class="absolute left-0 -bottom-1 w-0 h-[4px] bg-black rounded-full transition-all duration-300 group-hover:w-full"></span>
