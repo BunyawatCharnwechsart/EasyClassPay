@@ -1,9 +1,8 @@
 <template>
-    <div class="font-Bai-Jamjuree select-none">
+<div class="font-Bai-Jamjuree select-none">
+    <navbar/>
 
-        <navbar />
-
-        <div class="m-10">
+    <div class="m-10">
             <div class="flex gap-3 items-baseline">
                 <h1 class="text-3xl font-bold">สร้างบิลเก็บตังค์</h1>
                 <p class="text-xl">ไม่ต้องคิดเยอะเดี๋ยวพี่หมีช่วยเก็บในนะค้าบบ </p>
@@ -102,17 +101,12 @@
             </div>
         </div>
 
-        <!-- footer -->
-        <about />
-        
-    </div>
+    <about/>
+</div>
 </template>
 
-
 <script setup>
-import navbar from '~/components/navbar.vue';
+import navbar from '~/components/navber.vue';
 import about from '~/components/about.vue';
 import ModelSearch from '~/components/ModelSearch.vue';
-
-
 </script>

@@ -1,7 +1,6 @@
 <template>
     <div class="font-Bai-Jamjuree select-none">
-
-        <navbar />
+        <navbar/>
 
         <div class="m-10">
             <div class="flex gap-3 items-baseline">
@@ -81,18 +80,15 @@
 
             </div>
         </div>
-
+        
         <!-- footer -->
         <about />
-        
     </div>
 </template>
 
-
 <script setup>
-import ModelSearch from '~/components/ModelSearch.vue';
-import payMent from '~/components/payMent.vue';
-import navbar from '~/components/navbar.vue';
+import navbar from '~/components/navber.vue';
 import about from '~/components/about.vue';
-
+import payMent from '~/components/payMent.vue';
+import ModelSearch from '~/components/ModelSearch.vue';
 </script>

@@ -1,7 +1,6 @@
 <template>
-    <div class="font-Bai-Jamjuree select-none">
-        <navbar/>
-
+<div class="font-Bai-Jamjuree select-none">
+    <navbar/>
         <div class="m-10">
             <div class="flex gap-3 items-baseline">
                 <h1 class="text-3xl font-bold">บิลทั้งหมด</h1>
@@ -38,16 +37,13 @@
 
             </section>
         </div>
-        
-
-        <about/>
-    </div>
+    <about/>
+</div>
 </template>
 
-<script setup>
-import navbar from '~/components/navbar.vue';
+<script setup> 
+import navbar from '~/components/navber.vue';
 import about from '~/components/about.vue';
-import ModelCard from '~/components/ModelCard.vue';
 import { ref } from 'vue'
 
 const bills = [

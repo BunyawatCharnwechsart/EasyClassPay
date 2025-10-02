@@ -3,13 +3,13 @@
         <!-- โลโก้ -->
         <div class="flex gap-10">
             <img src="/LOGO.png">
-            <nuxt-link class="flex items-center text-2xl  ml-7 font-bold" to="../pages/main.vue">EasyClassPay</nuxt-link>
+            <nuxt-link class="flex items-center text-2xl  ml-7 font-bold" to="/main">EasyClassPay</nuxt-link>
         </div>
 
         <!-- เมนู span=hover -->
         <ul class="menu menu-horizontal gap-10 mr-auto ml-30">
             <li>
-                <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-300" to="../pages/createBill">
+                <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-300" to="/createBill">
                     สร้างบิลเก็บตังค์
                 <span class="absolute left-0 -bottom-1 w-0 h-[4px] bg-black rounded-full transition-all duration-300 group-hover:w-full"></span>
                 </nuxt-link>
