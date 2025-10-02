@@ -87,7 +87,7 @@
 </template>
 
 <script setup>
-import navbar from '~/components/navber.vue';
+import navbar from '~/components/navbar.vue';
 import about from '~/components/about.vue';
 import payMent from '~/components/payMent.vue';
 import ModelSearch from '~/components/ModelSearch.vue';

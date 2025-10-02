@@ -42,7 +42,7 @@
 </template>
 
 <script setup> 
-import navbar from '~/components/navber.vue';
+import navbar from '~/components/navbar.vue';
 import about from '~/components/about.vue';
 import { ref } from 'vue'
 

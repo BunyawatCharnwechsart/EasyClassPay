@@ -10,7 +10,7 @@
 
 
 <script setup>
-import navbar from '../components/navber.vue';
+import navbar from '../components/navbar.vue';
 import Ads from '~/components/Ads.vue';
 import cardmenu from '~/components/cardmenu.vue';
 import tutorial from '~/components/tutorial.vue';
