@@ -33,12 +33,58 @@
 
             <!-- การแจ้งเตือน -->
             <div class="dropdown dropdown-end">
-            <div tabindex="0"><img class="w-8 h-8 cursor-pointer hover:scale-110 transition-transform duration-100" src="/bell.png"></div>
-                <section tabindex="0" class="dropdown-content menu bg-white rounded-2xl z-auto w-90 h-110 p-5 shadow-xl">
+            <div tabindex="0">
+                <img
+                class="w-8 h-8 cursor-pointer hover:scale-110 transition-transform duration-100"
+                src="/bell.png"
+                >
+            </div>
+            <section
+                tabindex="0"
+                class="dropdown-content menu bg-white rounded-2xl z-auto w-96 max-h-96 overflow-y-auto p-5 shadow-xl"
+            >
+                <div>
+                <h1 class="flex justify-center text-xl font-bold mb-3">
+                    การแจ้งเตือนทั้งหมด
+                </h1>
+                </div>
+
+                <!-- Loading -->
+                <div v-if="MessageNotiStatus === 'pending'">
+                กำลังโหลด...
+                </div>
+
+                <!-- Error -->
+                <div v-else-if="MessageNotiError">
+                ❌ เกิดข้อผิดพลาด: {{ MessageNotiError.message }}
+                </div>
+
+                <!-- Data -->
+                <div v-else>
+                <ul v-if="MessageNotiData && MessageNotiData.length > 0" class="space-y-3">
+                <li
+                    v-for="(noti, index) in MessageNotiData"
+                    :key="index"
+                    class="hover:bg-gray-100 transition flex flex-col gap-1"
+                >
+                    <!-- ข้อความ -->
                     <div>
-                        <h1 class="flex justify-center text-xl font-bold">การแจ้งเตือนทั้งหมด</h1>
+                    <p class="font-bold text-gray-800">{{ noti.title }}</p>
+                    <p class="text-sm text-gray-600">{{ noti.message }}</p>
                     </div>
-                </section>
+
+                    <!-- เวลา -->
+                    <div class="flex justify-between text-xs text-gray-400">
+                    <span>{{ noti.notificationdate }}</span>
+                    <span>{{ noti.createdAt }}</span>
+                    </div>
+                </li>
+                </ul>
+                <div v-else class="text-gray-500 text-center">
+                    ไม่มีการแจ้งเตือน
+                </div>
+                </div>
+            </section>
             </div>
 
             <!-- โปรไฟล์ -->
@@ -72,3 +118,20 @@
         </div>
     </div>
 </template>
+
+<script setup>
+import { watch } from 'vue'
+
+const {
+    data: MessageNotiData,
+    status: MessageNotiStatus,
+    error: MessageNotiError,
+    refresh: refreshMessageNoti
+} = await useFetch('http://localhost:3005/api/MessageNoti')
+
+// Debug เวลา data เปลี่ยน
+watch(MessageNotiData, (newData) => {
+    console.log('MessageNoti data received:', newData)
+})
+
+</script>
