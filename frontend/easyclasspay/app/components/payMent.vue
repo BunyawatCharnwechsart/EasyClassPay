@@ -39,7 +39,7 @@
         </button>
     </div>
 
-    <!-- เนื้อหา tab -->
+    <!-- เนื้อหา tab bank -->
     <div v-if="activeTab === 'bank'" class="p-6 space-y-3">
         <!-- select bank -->
         <div class="bg-white shadow-[0_0_25px_rgba(0,0,0,0.3)] collapse border-none">
@@ -54,19 +54,48 @@
                 class="collapse-content"
             >
                 <div
-                    v-for="(item, index) in listBank" :key="index" class="p-5"
+                    v-for="(item, index) in listBank" :key="index" class="p-5 gap-5 flex items-center hover:bg-gray-300 hover:rounded-2xl"
                 >
-                    <img :src="item.img">
+                    <img class="h-8" :src="item.img">
                     <h1>{{ item.name }}</h1>
                 </div>
             </div>
         </div>
-        <!-- input -->
-        <p>Lorem, ipsum.</p>
+        <!-- input bank -->
+        <form action="" class="flex flex-col gap-5 pt-8">
+            <!-- ชื่อบัญชี -->
+            <span class="text-xl font-bold">ชื่อบัญชี</span>
+            <input class="p-5 rounded-2xl border-gray-400 border-2" 
+            type="text" placeholder="กรุณากรอกชื่อบัญชี">
+            <!-- เลขบัญชี -->
+            <span class="text-xl font-bold">เลขบัญชี</span>
+            <input class="p-5 rounded-2xl border-gray-400 border-2" 
+            type="text" placeholder="กรุณากรอกเลขบัญชี">
+            <!-- Button send -->
+            <button class="bg-[#159448] p-5 rounded-2xl text-white text-2xl font-bold cursor-pointer mt-10 flex justify-center items-center gap-5">
+                ถัดไป
+                <img src="/arrow-r.png">
+            </button>
+        </form>
     </div>
-
-    <div v-else-if="activeTab === 'promptpay'" class="p-6">
-        <p>สแกน QR พร้อมเพย์ เพื่อชำระเงิน</p>
+    <!-- เนื้อหา tab promptpay -->
+    <div v-else-if="activeTab === 'promptpay'" class="p-6 space-y-3 h-full">
+        <!-- input promptpay -->
+        <form action="" class="flex flex-col gap-5 h-full">
+            <!-- ชื่อบัญชี -->
+            <span class="text-xl font-bold">ชื่อบัญชี</span>
+            <input class="p-5 rounded-2xl border-gray-400 border-2" 
+            type="text" placeholder="กรุณากรอกชื่อบัญชี">
+            <!-- รหัสพร้อมเพย์ -->
+            <span class="text-xl font-bold">รหัสพร้อมเพย์</span>
+            <input class="p-5 rounded-2xl border-gray-400 border-2" 
+            type="text" placeholder="กรุณากรอกรหัสพร้อมเพย์">
+            <!-- Button send -->
+            <button class="bg-[#159448] p-5 rounded-2xl text-white text-2xl font-bold cursor-pointer mt-auto flex justify-center items-center gap-5">
+                ถัดไป
+                <img src="/arrow-r.png">
+            </button>
+        </form>
     </div>
 </div>
 </template>
@@ -79,12 +108,16 @@ const isOpen = ref(false);
 
 const listBank = [
     {
-        img:'',
-        name:'ออมสิน'
+        img:'/kongthai.png',
+        name:'กรุงไทย'
     },
     {
-        img:'',
-        name:'กสิกร'
+        img:'/thaipanit.png',
+        name:'ไทยพาณิช์'
+    },
+    {
+        img:'/kasikon.png',
+        name:'กสิกรไทย'
     }
 ];
 </script>
