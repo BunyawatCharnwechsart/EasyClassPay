@@ -52,9 +52,11 @@
                                             <ModelSearch/>
 
                                             <!-- รายชื่อเพื่อนของฉันที่เพิ่มได้ -->
-                                            <div class="flex justify-center items-center h-50">
-                                                <p>ยังไม่มี</p>
+                                            <div v-for="(friend, index) in friendData" :key="index">
+                                                <h1>{{ friend.username }}</h1>
+                                                <h1>{{ friend.email }}</h1>
                                             </div>
+
                                         </div>
                                     </div>
                                 </dialog>
@@ -91,4 +93,17 @@ import navbar from '~/components/navbar.vue';
 import about from '~/components/about.vue';
 import payMent from '~/components/payMent.vue';
 import ModelSearch from '~/components/ModelSearch.vue';
+import { watch } from 'vue';
+
+const {
+    data: friendData,
+    status: friendStatus,
+    error: friendError,
+    refresh: refreshfriend
+} = await useFetch('http://localhost:3005/api/friend');
+
+// Debug เวลา data เปลี่ยน
+watch(friendData, (newData)=>{
+    console.log('friend data received:', newData)
+});
 </script>

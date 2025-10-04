@@ -21,4 +21,4 @@ exports.getMessageNoti= async(req, res)=>{
         // res.status(500).send("Server Error");
         res.status(500).json({ error: "Failed to fetch Messages"});
     }
-}
+};
