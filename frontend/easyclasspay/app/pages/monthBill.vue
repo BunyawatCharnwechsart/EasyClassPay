@@ -30,26 +30,9 @@
                         <!-- กรอกวันที่ -->
                         <section class="flex flex-col w-2/5 bg-white shadow-xl p-9 rounded-xl gap-10 h-230">
 
-                            <!-- เริ่มเก็บ,เตือนเวลา -->
-                            <div class="bg-white shadow-[0_4px_20px_rgba(0,0,0,0.2)] p-9 rounded-xl h-70">
-                                
-                            </div>
-
-                            <!-- เก็บซ้ำ -->
-                            <div class="bg-white shadow-[0_4px_20px_rgba(0,0,0,0.2)] p-9 rounded-xl h-30">
-                                
-                            </div>
-
-                            <!-- จุดสิ้นสุด -->
-                            <div class="bg-white shadow-[0_4px_20px_rgba(0,0,0,0.2)] p-9 rounded-xl h-30">
-                                
-                            </div>
-
-                            <!-- หมายเหตุ -->
-                            <p class="text-red-500">หมายเหตุ : หากเดือนใดไม่มีวันที่เลือกไว้ (เช่น 29,30,31) <br> พี่หมีจะแจ้งเตือนในวันสิ้นเดือนของเดือนนั้นแทน</p>
+                            <modelTime/>
                             
-                            <button class="mt-auto cursor-pointer w-full bg-[#159448] text-white py-3 rounded-xl text-xl font-bold flex justify-center gap-5">ถัดไป <img src="/arrow-r.png"></button>
-
+                    
                         </section>
 
                         <!-- รายชื่อที่อยู่ในบิล -->
@@ -109,4 +92,5 @@
 import navbar from '~/components/navbar.vue';
 import about from '~/components/about.vue';
 import ModelSearch from '~/components/ModelSearch.vue';
+import modelTime from '~/components/ModelTime.vue';
 </script>

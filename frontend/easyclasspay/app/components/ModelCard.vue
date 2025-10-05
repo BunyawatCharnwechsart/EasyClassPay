@@ -1,5 +1,5 @@
 <template>
-<div class="font-Bai-Jamjuree select-none grid grid-cols-3 gap-6 justify-between p-6">
+<div class="select-none grid grid-cols-3 gap-6 justify-between p-6">
   <!-- bill 1-->
   <div class="relative w-full sm:w-80 h-96 rounded-3xl shadow-2xl overflow-hidden bg-[url('/bill1.png')] group bg-cover bg-center">
     
