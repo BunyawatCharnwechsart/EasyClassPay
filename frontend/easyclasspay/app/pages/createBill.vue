@@ -52,9 +52,14 @@
                                             <ModelSearch/>
 
                                             <!-- รายชื่อเพื่อนของฉันที่เพิ่มได้ -->
-                                            <div v-for="(friend, index) in friendData" :key="index">
-                                                <h1>{{ friend.username }}</h1>
-                                                <h1>{{ friend.email }}</h1>
+                                            <div 
+                                            v-for="(user, index) in usersData"
+                                            :key="index"
+                                            >
+                                                <ul class="flex flex-col">
+                                                    <li> {{ user.username }} </li>
+                                                    <li> {{ user.email }} </li>
+                                                </ul>
                                             </div>
 
                                         </div>
@@ -95,15 +100,12 @@ import payMent from '~/components/payMent.vue';
 import ModelSearch from '~/components/ModelSearch.vue';
 import { watch } from 'vue';
 
-const {
-    data: friendData,
-    status: friendStatus,
-    error: friendError,
-    refresh: refreshfriend
-} = await useFetch('http://localhost:3005/api/friend');
+const{
+    data: usersData,
+    error: usersError
+} = await useFetch('http://localhost:3005/api/users');
 
-// Debug เวลา data เปลี่ยน
-watch(friendData, (newData)=>{
-    console.log('friend data received:', newData)
+watch(usersData, (newData) => {
+    console.log('usersData received', newData)
 });
 </script>

@@ -56,7 +56,7 @@
 
                 <!-- Error -->
                 <div v-else-if="MessageNotiError">
-                ❌ เกิดข้อผิดพลาด: {{ MessageNotiError.message }}
+                เกิดข้อผิดพลาด: {{ MessageNotiError.message }}
                 </div>
 
                 <!-- Data -->
