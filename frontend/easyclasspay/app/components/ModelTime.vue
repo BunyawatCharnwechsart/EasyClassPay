@@ -4,20 +4,64 @@
     <!-- ช่องเลือกวันเวลา -->
     <input 
       type="datetime-local" 
-      class="w-full h-20 bg-white rounded-2xl shadow-xl px-6 text-gray-700 text-lg outline-none"
+      class="w-full h-25 bg-white rounded-2xl shadow-xl px-16 text-gray-700 text-lg outline-none mb-8"
     />
+    
+    <!-- Dropdown 1-->
+    <div class="relative w-full mb-8">
+        <!-- ปุ่มแสดงผล -->
+        <button 
+        @click="openRepeat = !openRepeat"
+        class="flex justify-between items-center w-full bg-white rounded-2xl shadow-xl px-10 h-25 cursor-pointer text-gray-700 text-lg"
+        >
+        <div class="flex items-center space-x-3">
+            <!-- ไอคอนคงที่ หน้า label -->
+            <img src="/loopicon.png" alt="icon" class="w-5 h-5" />
+            <span class="text-gray-700 text-lg">{{ repeatOption }}</span>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" 
+            class="w-6 h-6 text-gray-500 transform transition-transform duration-200"
+            :class="{ 'rotate-180': openRepeat }"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 9l-7 7-7-7" />
+        </svg>
+        </button>
 
-    <!-- Dropdown-->
-    <div class="relative w-full">
+        <!-- ตัวเลือก -->
+        <div 
+        v-if="openRepeat" 
+        class="absolute z-10 mt-2 w-full bg-white rounded-2xl shadow-xl overflow-hidden"
+        >
+        <div 
+            v-for="(item, index) in repeatOptions" 
+            :key="index"
+            @click="selectRepeat(item)"
+            class="flex items-center space-x-3 px-6 py-3 cursor-pointer hover:bg-gray-100"
+            :class="repeatOption === item ? 'bg-black text-white hover:bg-black' : ''"
+        >
+            <!-- เปลี่ยนสีไอคอนตามถูกเลือก -->
+            <img 
+            src="/loopicon.png" 
+            alt="icon" 
+            class="w-5 h-5"
+            :class="repeatOption === item ? 'filter brightness-0 invert' : 'opacity-50'"
+            />
+            <span class="text-lg">{{ item }}</span>
+        </div>
+        </div>
+    </div>
+
+    <!-- Dropdown 2-->
+    <div class="relative w-full mb-8">
         
-
       <!-- กล่องแสดงผล -->
       <div 
         @click="open = !open"
-        class="flex justify-between items-center w-full bg-white rounded-2xl shadow-xl px-6 h-20 cursor-pointer text-gray-700 text-lg"
+        class="flex justify-between items-center w-full bg-white rounded-2xl shadow-xl px-10 h-25 cursor-pointer text-gray-700 text-lg"
       >
         <span class="flex items-center space-x-3">
-          <img src="/infinityicon.png" alt="icon" class="w-7 h-7" />
+          <img src="/infinity.png" alt="icon" class="w-7 h-7" />
           <span class="font-medium">{{ selected }}</span>
         </span>
 
@@ -41,7 +85,7 @@
                     @click="selectOption(option)"
                     class="flex items-center px-6 py-4 hover:bg-gray-50 cursor-pointer"
                 >
-                    <img src="/infinityicon.png" alt="icon" class="w-6 h-6 mr-3" />
+                    <img src="/infinity.png" alt="icon" class="w-6 h-6 mr-3" />
                     <span>{{ option }}</span>
                 </div>
 
@@ -56,6 +100,20 @@
 
 <script setup>
 import { ref } from 'vue'
+
+const openRepeat = ref(false)
+const repeatOption = ref('เก็บซ้ำทุก 1 เดือน')
+const repeatOptions = [
+  'เก็บซ้ำทุก 1 สัปดาห์',
+  'เก็บซ้ำทุก 1 เดือน',
+  'เก็บซ้ำทุก 3 เดือน',
+  'เก็บซ้ำทุก 12 เดือน'
+]
+
+function selectRepeat(item) {
+  repeatOption.value = item
+  openRepeat.value = false
+}
 
 const open = ref(false)
 const selected = ref('ไม่มีจุดสิ้นสุด')
