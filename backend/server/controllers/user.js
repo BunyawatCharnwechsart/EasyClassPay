@@ -3,7 +3,7 @@ const pool = require("../db");
 // ดึง users
 exports.getUsers = async (req, res) => {
 try {
-    const [rows] = await pool.query("SELECT * FROM easyclasspay.users;");
+    const [rows] = await pool.query("SELECT username,email FROM easyclasspay.users;");
     res.json(rows);
 } catch (err) {
     console.log(err);

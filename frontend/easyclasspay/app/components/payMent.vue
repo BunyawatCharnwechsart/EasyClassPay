@@ -51,4 +51,5 @@ const router = useRouter();
 const goNext = () => {
     router.push('/main')
 };
+
 </script>

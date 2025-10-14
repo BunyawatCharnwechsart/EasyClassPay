@@ -52,8 +52,14 @@
                                             <ModelSearch/>
 
                                             <!-- รายชื่อเพื่อนของฉันที่เพิ่มได้ -->
-                                            <div class="flex justify-center items-center h-50">
-                                                <p>ยังไม่มี</p>
+                                            <div 
+                                            v-for="(user, index) in usersData"
+                                            :key="index"
+                                            >
+                                                <ul class="flex flex-col">
+                                                    <li> {{ user.username }} </li>
+                                                    <li> {{ user.email }} </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -91,4 +97,14 @@ import navbar from '~/components/navbar.vue';
 import about from '~/components/about.vue';
 import payMent from '~/components/payMent.vue';
 import ModelSearch from '~/components/ModelSearch.vue';
+import { watch } from 'vue';
+
+const{
+    data: usersData,
+    error: usersError
+} = await useFetch('http://localhost:3005/api/users');
+
+watch(usersData, (newData) => {
+    console.log('usersData received', newData)
+});
 </script>
