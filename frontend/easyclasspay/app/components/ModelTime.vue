@@ -15,7 +15,6 @@
         class="flex justify-between items-center w-full bg-white rounded-2xl shadow-xl px-10 h-25 cursor-pointer text-gray-700 text-lg"
         >
         <div class="flex items-center space-x-3">
-            <!-- ไอคอนคงที่ หน้า label -->
             <img src="/loopicon.png" alt="icon" class="w-5 h-5" />
             <span class="text-gray-700 text-lg">{{ repeatOption }}</span>
         </div>
@@ -40,7 +39,6 @@
             class="flex items-center space-x-3 px-6 py-3 cursor-pointer hover:bg-gray-100"
             :class="repeatOption === item ? 'bg-black text-white hover:bg-black' : ''"
         >
-            <!-- เปลี่ยนสีไอคอนตามถูกเลือก -->
             <img 
             src="/loopicon.png" 
             alt="icon" 
