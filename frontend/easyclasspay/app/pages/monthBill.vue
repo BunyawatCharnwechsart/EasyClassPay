@@ -25,32 +25,15 @@
                         </div>
                     </div>
 
-                     <!-- ส่วนของใส่วันที่และรายชื่อที่อยู่ในบิล -->
+                    <!-- ส่วนของใส่วันที่และรายชื่อที่อยู่ในบิล -->
                     <div class="flex gap-5">
 
                         <!-- กรอกวันที่ -->
                         <section class="flex flex-col w-2/5 bg-white shadow-xl p-9 rounded-xl gap-10 h-230">
 
-                            <!-- เริ่มเก็บ,เตือนเวลา -->
-                            <div class="bg-white shadow-[0_4px_20px_rgba(0,0,0,0.2)] p-9 rounded-xl h-70">
-                                
-                            </div>
-
-                            <!-- เก็บซ้ำ -->
-                            <div class="bg-white shadow-[0_4px_20px_rgba(0,0,0,0.2)] p-9 rounded-xl h-30">
-                                
-                            </div>
-
-                            <!-- จุดสิ้นสุด -->
-                            <div class="bg-white shadow-[0_4px_20px_rgba(0,0,0,0.2)] p-9 rounded-xl h-30">
-                                
-                            </div>
-
-                            <!-- หมายเหตุ -->
-                            <p class="text-red-500">หมายเหตุ : หากเดือนใดไม่มีวันที่เลือกไว้ (เช่น 29,30,31) <br> พี่หมีจะแจ้งเตือนในวันสิ้นเดือนของเดือนนั้นแทน</p>
+                            <modelTime/>
                             
-                            <button class="mt-auto cursor-pointer w-full bg-[#159448] text-white py-3 rounded-xl text-xl font-bold flex justify-center gap-5">ถัดไป <img src="/arrow-r.png"></button>
-
+                    
                         </section>
 
                         <!-- รายชื่อที่อยู่ในบิล -->
@@ -77,8 +60,14 @@
                                                 <ModelSearch/>
 
                                                 <!-- รายชื่อเพื่อนของฉันที่เพิ่มได้ -->
-                                                <div class="flex justify-center items-center h-50">
-                                                    <p>ยังไม่มี</p>
+                                                <div 
+                                                v-for="(user, index) in usersData"
+                                                :key="index"
+                                                >
+                                                    <ul class="flex flex-col">
+                                                        <li> {{ user.username }} </li>
+                                                        <li> {{ user.email }} </li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
@@ -110,4 +99,14 @@
 import navbar from '~/components/navbar.vue';
 import about from '~/components/about.vue';
 import ModelSearch from '~/components/ModelSearch.vue';
+import { watch } from 'vue';
+
+const{
+    data: usersData,
+    error: usersError
+} = await useFetch('http://localhost:3005/api/users');
+
+watch(usersData, (newData) => {
+    console.log('usersData received', newData)
+});
 </script>

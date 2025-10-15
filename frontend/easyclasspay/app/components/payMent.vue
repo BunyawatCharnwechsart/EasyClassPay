@@ -106,18 +106,9 @@ import { ref } from 'vue';
 const activeTab = ref('bank');
 const isOpen = ref(false);
 
-const listBank = [
-    {
-        img:'/kongthai.png',
-        name:'กรุงไทย'
-    },
-    {
-        img:'/thaipanit.png',
-        name:'ไทยพาณิช์'
-    },
-    {
-        img:'/kasikon.png',
-        name:'กสิกรไทย'
-    }
-];
+const router = useRouter();
+const goNext = () => {
+    router.push('/main')
+};
+
 </script>
