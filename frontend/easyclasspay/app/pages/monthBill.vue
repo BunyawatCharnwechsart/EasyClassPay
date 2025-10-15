@@ -1,5 +1,6 @@
 <template>
 <div class="font-Bai-Jamjuree select-none">
+    
     <navbar/>
 
     <div class="m-10">
