@@ -18,8 +18,7 @@ exports.getMessageNoti= async(req, res)=>{
         const [rows] = await pool.query("SELECT message,notificationdate FROM easyclasspay.notification;")
         const formatted = rows.map(row => ({
             ...row,
-            createddate: dayjs(row.createddate).format("DD-MM-YYYY HH:mm"),
-            duedate: dayjs(row.duedate).format("DD-MM-YYYY HH:mm")
+            notificationdate: dayjs(row.notificationdate).format("DD-MM-YYYY HH:mm"),
         }));
         res.json(formatted);
     }catch(err){
