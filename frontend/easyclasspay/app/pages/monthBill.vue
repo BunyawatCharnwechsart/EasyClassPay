@@ -3,11 +3,11 @@
 
         <navbar />
 
-        <form class="flex flex-col bg-white m-10 p-2 rounded-2xl ring ring-yellow-200 col-auto">
+        <form class="flex flex-col bg-white m-10 rounded-2xl ring ring-yellow-200 col-auto">
 
             <div class="m-10">
                 <div class="flex gap-3 items-baseline">
-                    <h1 class="text-3xl font-bold">สร้างบิลเก็บตังค์</h1>
+                    <h1 class="text-3xl font-bold">บิลแบบรายเดือน</h1>
                     <p class="text-xl">ไม่ต้องคิดเยอะเดี๋ยวพี่หมีช่วยเก็บในนะค้าบบ </p>
                 </div>
 

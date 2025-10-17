@@ -3,7 +3,7 @@
 
         <navbar/>
 
-    <form class="flex flex-col bg-white m-10 p-2 rounded-2xl ring ring-yellow-200 col-auto">
+    <form class="flex flex-col bg-white m-10 rounded-2xl ring ring-yellow-200 col-auto">
 
         <div class="m-10">
             <div class="flex gap-3 items-baseline">
@@ -77,7 +77,7 @@
 
                     <!-- จ่ายตัง -->
                     <div class="flex flex-col gap-4 w-1/3">
-                        <div class="bg-white shadow-2xl rounded-2xl flex flex-col h-230">
+                        <div class="bg-white shadow-2xl rounded-2xl flex flex-col h-220">
                         <!-- หัวข้อ -->
                         <div class="flex text-3xl font-bold justify-center p-9 bg-[#FFC93F] rounded-2xl">
                         เลือกธนาคาร
@@ -163,7 +163,7 @@
                             
                             </div>
                             <!-- input bank -->
-                            <form action="" class="flex flex-col gap-5 pt-8">
+                            <div class="flex flex-col gap-5 pt-8">
                                 <!-- ชื่อบัญชี -->
                                 <span class="text-xl font-bold">ชื่อบัญชี</span>
                                 <input class="p-5 rounded-2xl border-gray-400 border-2" 
@@ -172,7 +172,7 @@
                                 <span class="text-xl font-bold">เลขบัญชี</span>
                                 <input class="p-5 rounded-2xl border-gray-400 border-2" 
                                 type="text" placeholder="กรุณากรอกเลขบัญชี">
-                            </form>
+                            </div>
                         </div>
                         <!-- เนื้อหา tab promptpay -->
                         <div v-else-if="activeTab === 'promptpay'" class="p-6 space-y-3 h-full">
