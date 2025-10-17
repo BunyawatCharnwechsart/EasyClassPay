@@ -3,7 +3,9 @@
         <!-- bill 1-->
         <div
             v-for="(bill, index) in billData" :key="index"
-            class="relative w-full sm:w-80 h-96 rounded-3xl shadow-2xl overflow-hidden bg-[url('/bill1.png')] group bg-cover bg-center">
+            class="relative w-full sm:w-80 h-96 rounded-3xl shadow-2xl overflow-hidden bg-[url('/bill1.png')] group bg-cover bg-center"
+            @click="goToBillDetail(bill)">
+            
             <!-- กล่องที่ขยาย -->
             <div class="absolute bottom-0 w-full bg-white rounded-t-3xl p-4 
                 h-[160px] group-hover:h-90
@@ -79,4 +81,9 @@ const {
     error: usersErr
 } = await useFetch('http://localhost:3005/api/users')
 
+const goToBillDetail = (bill) => {
+  // ตัวอย่าง: ไปหน้า /bill-detail หรือ /bill/:id
+  router.push(`/bill/${bill.id}`) 
+  // หรือ router.push('/bill-detail')
+}
 </script>
