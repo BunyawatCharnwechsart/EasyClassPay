@@ -9,21 +9,27 @@
         <!-- เมนู span=hover -->
         <ul class="menu menu-horizontal gap-10 mr-auto ml-30">
             <li>
-                <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-300" to="/createBill">
+                <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-300"
+                    to="/createBill">
                     สร้างบิลเก็บตังค์
-                <span class="absolute left-0 -bottom-1 w-0 h-[4px] bg-black rounded-full transition-all duration-300 group-hover:w-full"></span>
+                    <span
+                        class="absolute left-0 -bottom-1 w-0 h-[4px] bg-black rounded-full transition-all duration-300 group-hover:w-full"></span>
                 </nuxt-link>
             </li>
             <li>
-                <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-300" to="/monthBill">
+                <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-300"
+                    to="/monthBill">
                     บิลแบบรายเดือน
-                <span class="absolute left-0 -bottom-1 w-0 h-[4px] bg-black rounded-full transition-all duration-300 group-hover:w-full"></span>
+                    <span
+                        class="absolute left-0 -bottom-1 w-0 h-[4px] bg-black rounded-full transition-all duration-300 group-hover:w-full"></span>
                 </nuxt-link>
             </li>
             <li>
-                <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-300" to="/allBill">
-                บิลทั้งหมด
-                <span class="absolute left-0 -bottom-1 w-0 h-[4px] bg-black rounded-full transition-all duration-300 group-hover:w-full"></span>
+                <nuxt-link class="font-bold text-xl relative group hover:scale-110 transition-transform duration-300"
+                    to="/allBill">
+                    บิลทั้งหมด
+                    <span
+                        class="absolute left-0 -bottom-1 w-0 h-[4px] bg-black rounded-full transition-all duration-300 group-hover:w-full"></span>
                 </nuxt-link>
             </li>
         </ul>
@@ -33,65 +39,51 @@
 
             <!-- การแจ้งเตือน -->
             <div class="dropdown dropdown-end">
-            <div tabindex="0">
-                <img
-                class="w-8 h-8 cursor-pointer hover:scale-110 transition-transform duration-100"
-                src="/bell.png"
-                >
-            </div>
-            <section
-                tabindex="0"
-                class="dropdown-content menu bg-white rounded-2xl z-auto w-96 max-h-96 overflow-y-auto p-5 shadow-xl"
-            >
-                <div>
-                <h1 class="flex justify-center text-xl font-bold mb-3">
-                    การแจ้งเตือนทั้งหมด
-                </h1>
+                <div tabindex="0">
+                    <img class="w-8 h-8 cursor-pointer hover:scale-110 transition-transform duration-100"
+                        src="/bell.png">
                 </div>
-
-                <!-- Loading -->
-                <div v-if="MessageNotiStatus === 'pending'">
-                กำลังโหลด...
-                </div>
-
-                <!-- Error -->
-                <div v-else-if="MessageNotiError">
-                เกิดข้อผิดพลาด: {{ MessageNotiError.message }}
-                </div>
-
-                <!-- Data -->
-                <div v-else>
-                <ul v-if="MessageNotiData && MessageNotiData.length > 0" class="space-y-3">
-                <li
-                    v-for="(noti, index) in MessageNotiData"
-                    :key="index"
-                    class="hover:bg-gray-100 transition flex flex-col gap-1"
-                >
-                    <!-- ข้อความ -->
-                    <div>
-                    <p class="font-bold text-gray-800">{{ noti.title }}</p>
-                    <p class="text-sm text-gray-600">{{ noti.message }}</p>
+                <section tabindex="0"
+                    class="dropdown-content menu bg-white rounded-2xl z-auto w-96 max-h-96 overflow-y-auto p-5 shadow-xl">
+                    <div class=" border-b-2 border-gray-200">
+                        <h1 class="flex justify-center text-xl font-bold mb-3">
+                            การแจ้งเตือนทั้งหมด
+                        </h1>
                     </div>
 
-                    <!-- เวลา -->
-                    <div class="flex justify-between text-xs text-gray-400">
-                    <span>{{ noti.notificationdate }}</span>
-                    <span>{{ noti.createdAt }}</span>
+                    <!-- Loading -->
+                    <div v-if="MessageNotiStatus === 'pending'">
+                        กำลังโหลด...
                     </div>
-                </li>
-                </ul>
-                <div v-else class="text-gray-500 text-center">
-                    ไม่มีการแจ้งเตือน
-                </div>
-                </div>
-            </section>
+
+                    <!-- Error -->
+                    <div v-else-if="MessageNotiError">
+                        เกิดข้อผิดพลาด: {{ MessageNotiError.message }}
+                    </div>
+
+                    <!-- Data -->
+                    <div v-else class="mt-2">
+                        <ul v-if="MessageNotiData && MessageNotiData.length > 0" class="space-y-3">
+                            <li v-for="(noti, index) in MessageNotiData" :key="index"
+                                class="hover:bg-gray-100 transition flex flex-col gap-1">
+                                <!-- เวลา -->
+                                <p class="text-sm text-gray-600">{{ noti.message }} <br> {{ noti.notificationdate }}</p>
+                            </li>
+                        </ul>
+                        <div v-else class="text-gray-500 text-center">
+                            ไม่มีการแจ้งเตือน
+                        </div>
+                    </div>
+                </section>
             </div>
 
             <!-- โปรไฟล์ -->
             <div class="dropdown dropdown-end">
-                <div tabindex="1"><img class="w-10 h-10 rounded-full cursor-pointer hover:scale-105 transition-transform duration-100" src="/Avatar.png"></div>
+                <div tabindex="1"><img
+                        class="w-10 h-10 rounded-full cursor-pointer hover:scale-105 transition-transform duration-100"
+                        src="/Avatar.png"></div>
                 <section tabindex="1" class="dropdown-content menu bg-white rounded-2xl z-auto w-90 h-auto shadow-xl">
-                    <div class="flex flex-col"> 
+                    <div class="flex flex-col">
 
                         <!-- เปลี่ยนโปรไฟล์ -->
                         <div class="flex flex-col items-center gap-2 p-5">
@@ -105,12 +97,15 @@
 
                         <!-- เพิ่มเพื่อน -->
                         <div class="flex justify-center p-5">
-                            <button class="cursor-pointer flex items-center p-5 pt-2 pb-2 border-1 hover:scale-105 transition-transform duration-100"><img class="w-5 h-5" src="/Addfriend.png">เพิ่มเพื่อน</button>
+                            <button
+                                class="cursor-pointer flex items-center p-5 pt-2 pb-2 border-1 hover:scale-105 transition-transform duration-100"><img
+                                    class="w-5 h-5" src="/Addfriend.png">เพิ่มเพื่อน</button>
                         </div>
 
                         <!-- ออกจากระบบ -->
                         <div class="flex justify-center mb-3">
-                            <button class="cursor-pointer p-3 w-60 rounded-2xl border-2 text-red-500 border-red-500 bg-transparent hover:bg-red-500 hover:text-white hover:shadow-xl hover:shadow-red-500/50 transition-all duration-300">ออกจากระบบ</button>
+                            <button
+                                class="cursor-pointer p-3 w-60 rounded-2xl border-2 text-red-500 border-red-500 bg-transparent hover:bg-red-500 hover:text-white hover:shadow-xl hover:shadow-red-500/50 transition-all duration-300">ออกจากระบบ</button>
                         </div>
                     </div>
                 </section>

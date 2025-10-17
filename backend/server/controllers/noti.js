@@ -1,5 +1,6 @@
 const { error } = require("console");
 const pool = require("../db")
+const dayjs = require("dayjs");
 
 exports.getAllNoti= async (req, res) => {
 try {
@@ -15,7 +16,11 @@ exports.getMessageNoti= async(req, res)=>{
     try{
         console.log("Fetching Message.....")
         const [rows] = await pool.query("SELECT message,notificationdate FROM easyclasspay.notification;")
-        res.json(rows);
+        const formatted = rows.map(row => ({
+            ...row,
+            notificationdate: dayjs(row.notificationdate).format("DD-MM-YYYY HH:mm"),
+        }));
+        res.json(formatted);
     }catch(err){
         console.log(err);
         // res.status(500).send("Server Error");

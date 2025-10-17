@@ -31,7 +31,7 @@
 
                     <!-- show card -->
                     <section class="p-5">
-                        <ModelCard/>
+                        <ModelallBill/>
                     </section>
                 </div>
 
@@ -44,6 +44,7 @@
 <script setup> 
 import navbar from '~/components/navbar.vue';
 import about from '~/components/about.vue';
+import ModelallBill from '~/components/ModelallBill.vue';
 import { ref } from 'vue'
 
 const bills = [
