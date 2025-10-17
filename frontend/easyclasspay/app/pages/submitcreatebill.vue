@@ -143,7 +143,7 @@
 
                     <!-- จ่ายตัง -->
                     <div class="flex flex-col gap-4 w-1/3">
-                        <div class="bg-white shadow-2xl rounded-2xl flex flex-col h-230">
+                        <div class="bg-white shadow-2xl rounded-2xl flex flex-col h-220">
                         <!-- หัวข้อ -->
                             <div class="flex text-3xl font-bold justify-center p-9 bg-[#FFC93F] rounded-2xl">
                             วิธีชำระเงิน
