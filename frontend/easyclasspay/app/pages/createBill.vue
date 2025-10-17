@@ -194,10 +194,10 @@
                         
                     </div>
 
-                        <div class="flex mt-auto pr-10 justify-center">
+                        <div class="flex mt-auto justify-center w-full">
                             <button
                                 type="submit"
-                                class="bg-[#159448] hover:bg-[#11783a] px-12 py-4 rounded-xl text-white text-2xl font-bold flex justify-center items-center gap-3 shadow-lg transition w-full">
+                                class="bg-[#159448] hover:bg-[#11783a] py-4 rounded-xl text-white text-2xl font-bold flex justify-center items-center gap-3 shadow-lg transition w-[100%]">
                                 ถัดไป
                                 <img src="/arrow-r.png" alt="arrow" class="w-5 h-5" />
                             </button>
