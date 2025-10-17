@@ -31,7 +31,14 @@
 
                     <!-- show card -->
                     <section class="p-5">
-                        <ModelallBill/>
+                        <component
+                        :is="[
+                            ModelallBill,
+                            ModelGetBill,
+                            ModelMonthBill,
+                            ModelPendingBill
+                        ][selected]"
+                        />
                     </section>
                 </div>
 
@@ -45,16 +52,16 @@
 import navbar from '~/components/navbar.vue';
 import about from '~/components/about.vue';
 import ModelallBill from '~/components/ModelallBill.vue';
+import ModelMonthBill from '~/components/ModelMonthBill.vue';
+import ModelPendingBill from '~/components/ModelPendingBill.vue';
+import ModelGetBill from '~/components/ModelGetBill.vue';
 import { ref } from 'vue'
 
-const bills = [
-    "บิลที่รอคุณจ่าย",
+const bills = [    
+    "บิลทั้งหมด",
     "บิลเก็บตังค์",
-    "บิลรายการเฉพาะ",
     "บิลรายเดือน",
-    "บิลที่ฉันสร้าง",
-    "บิลทั้งหมด"
+    "บิลที่รอคุณจ่าย"
 ]
-
 const selected = ref(0)
 </script>
