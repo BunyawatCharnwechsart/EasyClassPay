@@ -13,13 +13,13 @@
                     <span class="p-2 text-xl font-bold">ชนิดของบิล</span>
                     <ul class="flex flex-col">
                     <li
-                        v-for="(item, index) in bills"
+                        v-for="(item, index) in billTypes"
                         :key="index"
                         @click="selected = index"
                         class="cursor-pointer p-7 font-bold border-t border-gray-200 hover:bg-amber-300 transition"
                         :class="selected === index ? 'bg-amber-300 text-black rounded-lg' : ''"
                     >
-                        {{ item }}
+                        {{ item.label }}
                     </li>
                     </ul>
                 </div>
@@ -31,14 +31,7 @@
 
                     <!-- show card -->
                     <section class="p-5">
-                        <component
-                        :is="[
-                            ModelallBill,
-                            ModelGetBill,
-                            ModelMonthBill,
-                            ModelPendingBill
-                        ][selected]"
-                        />
+                        <BillCard :endpoint="billTypes[selected].endpoint" :key="selected" />
                     </section>
                 </div>
 
@@ -51,17 +44,15 @@
 <script setup> 
 import navbar from '~/components/navbar.vue';
 import about from '~/components/about.vue';
-import ModelallBill from '~/components/ModelallBill.vue';
-import ModelMonthBill from '~/components/ModelMonthBill.vue';
-import ModelPendingBill from '~/components/ModelPendingBill.vue';
-import ModelGetBill from '~/components/ModelGetBill.vue';
+import BillCard from '~/components/ฺBillCard.vue';
 import { ref } from 'vue'
 
-const bills = [    
-    "บิลทั้งหมด",
-    "บิลเก็บตังค์",
-    "บิลรายเดือน",
-    "บิลที่รอคุณจ่าย"
+const billTypes = [    
+    { label: "บิลทั้งหมด", endpoint: "/api/bill" },
+    { label: "บิลเก็บตังค์", endpoint: "/api/bill/getBill" },
+    { label: "บิลรายเดือน", endpoint: "/api/bill/monthBill" },
+    { label: "บิลที่รอคุณจ่าย", endpoint: "/api/bill/pending" }
 ]
+
 const selected = ref(0)
 </script>

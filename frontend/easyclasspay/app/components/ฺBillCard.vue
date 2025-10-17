@@ -1,6 +1,6 @@
 <template>
     <div class="select-none grid grid-cols-3 gap-6 justify-between p-6">
-        <!-- bill 1-->
+        <!-- bill card -->
         <div
             v-for="(bill, index) in billData" :key="index"
             class="relative w-full sm:w-80 h-96 rounded-3xl shadow-2xl overflow-hidden bg-[url('/bill1.png')] group bg-cover bg-center">
@@ -63,20 +63,24 @@
             </div>
         </div>
     </div>
-
 </template>
 
 <script setup>
+const props = defineProps({
+    endpoint: {
+        type: String,
+        required: true
+    }
+})
 
 const {
     data: billData,
     error: billErr,
     status: billStatus
-} = await useFetch('http://localhost:3005/api/bill/pending');
+} = await useFetch(`http://localhost:3005${props.endpoint}`)
 
 const {
     data: userData,
     error: usersErr
 } = await useFetch('http://localhost:3005/api/users')
-
 </script>
