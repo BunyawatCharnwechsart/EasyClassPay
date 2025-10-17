@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="font-Bai-Jamjuree select-none">
         <navbar/>
 
         <form class="flex flex-col bg-white m-10 p-9 rounded-2xl ring ring-yellow-200 col-auto">
@@ -183,4 +183,5 @@
 <script>
 import navbar from '~/components/navbar.vue';
 import about from '~/components/about.vue';
+import ModelSearch from '~/components/ModelSearch.vue';
 </script>
