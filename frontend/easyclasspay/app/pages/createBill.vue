@@ -3,7 +3,7 @@
 
         <navbar/>
 
-    <form class="flex flex-col bg-white m-10 p-2 rounded-2xl ring ring-yellow-200">
+    <form class="flex flex-col bg-white m-10 p-2 rounded-2xl ring ring-yellow-200 col-auto">
 
         <div class="m-4">
             <div class="flex gap-3 items-baseline">
@@ -33,7 +33,7 @@
                         </div>
 
                         <!-- list ชื่อเพื่อนที่อยู่ในบิล -->
-                        <div class="bg-white shadow-2xl p-5 rounded-xl">   
+                        <div class="bg-white shadow-2xl p-5 rounded-xl h-200">   
                             <!-- หัวข้อ -->
                             <div class="flex justify-between items-center">
                                 <h1 class="text-2xl font-semibold">รายชื่อคนที่อยู่ในบิล</h1>
@@ -79,7 +79,8 @@
                     </div>
 
                     <!-- จ่ายตัง -->
-                    <div class="bg-white shadow-2xl w-1/3 rounded-2xl flex flex-col">
+                    <div class="flex flex-col gap-4 w-1/3">
+                        <div class="bg-white shadow-2xl rounded-2xl flex flex-col h-230">
                         <!-- หัวข้อ -->
                         <div class="flex text-3xl font-bold justify-center p-9 bg-[#FFC93F] rounded-2xl">
                         เลือกธนาคาร
@@ -190,21 +191,19 @@
                                 type="text" placeholder="กรุณากรอกรหัสพร้อมเพย์">
                             </div>
                         </div>
+                        
+                    </div>
 
-                        <div class="mt-8 w-full flex justify-center">
+                        <div class="flex mt-auto justify-center w-full">
                             <button
-                            type="submit"
-                            class="w-full bg-[#159448] hover:bg-[#11783a] py-4 rounded-xl 
-                                    text-white text-2xl font-bold flex justify-center items-center 
-                                    gap-3 shadow-lg transition"
-                            >
-                            ถัดไป
-                            <img src="/arrow-r.png" alt="arrow" class="w-5 h-5" />
+                                type="submit"
+                                class="bg-[#159448] hover:bg-[#11783a] py-4 rounded-xl text-white text-2xl font-bold flex justify-center items-center gap-3 shadow-lg transition w-[100%]">
+                                ถัดไป
+                                <img src="/arrow-r.png" alt="arrow" class="w-5 h-5" />
                             </button>
                         </div>
 
                     </div>
-
                 </div>
                 
         </div>
