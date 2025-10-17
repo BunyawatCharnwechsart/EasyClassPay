@@ -129,7 +129,7 @@
                         <div class="bg-white shadow-2xl rounded-2xl flex flex-col h-250">
                             <!-- หัวข้อ -->
                             <div class="flex text-3xl font-bold justify-center p-9 bg-[#FFC93F] rounded-2xl">
-                                เลือกธนาคาร
+                                วิธีชำระเงิน
                             </div>
 
                             <div class="mt-8">
