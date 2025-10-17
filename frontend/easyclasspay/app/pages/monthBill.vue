@@ -70,12 +70,7 @@
                                                     <ModelSearch />
 
                                                     <!-- รายชื่อเพื่อนของฉันที่เพิ่มได้ -->
-                                                    <div v-for="(user, index) in usersData" :key="index">
-                                                        <ul class="flex flex-col">
-                                                            <li> {{ user.username }} </li>
-                                                            <li> {{ user.email }} </li>
-                                                        </ul>
-                                                    </div>
+                                                    <friendList :usersData="usersData"/>
                                                 </div>
                                             </div>
                                         </dialog>
@@ -242,6 +237,7 @@ import navbar from '~/components/navbar.vue';
 import about from '~/components/about.vue';
 import ModelSearch from '~/components/ModelSearch.vue';
 import { watch } from 'vue';
+import friendList from '~/components/friendList.vue';
 
 const {
     data: usersData,

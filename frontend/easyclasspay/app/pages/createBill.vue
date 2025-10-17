@@ -53,11 +53,8 @@
                                                 
                                                 <!-- ค้นหา -->
                                                 <ModelSearch/>
-
                                                 <!-- รายชื่อเพื่อนของฉันที่เพิ่มได้ -->
-                                                <div class="flex justify-center items-center h-50">
-                                                    <p>ยังไม่มี</p>
-                                                </div>
+                                                <friendList :usersData="usersData"/>
                                             </div>
                                         </div>
                                     </dialog>
@@ -196,7 +193,7 @@
 
                         <div class="flex mt-auto justify-center w-full">
                             <router-link
-                             to="/submitcreatebill"
+                            to="/submitcreatebill"
                                 type="submit"
                                 class="bg-[#159448] hover:bg-[#11783a] py-4 rounded-xl text-white text-2xl font-bold flex justify-center items-center gap-3 shadow-lg transition w-[100%]">
                                 ถัดไป
@@ -210,10 +207,8 @@
         </div>
 
     </form>
-       
         <!-- footer -->
         <about />  
-          
     </div>
 </template>
 
@@ -242,6 +237,12 @@ const listBank = [
 import navbar from '~/components/navbar.vue';
 import about from '~/components/about.vue';
 import ModelSearch from '~/components/ModelSearch.vue';
+import friendList from '~/components/friendList.vue';
+
+const {
+    data: usersData,
+    error: usersError
+} = await useFetch('http://localhost:3005/api/users');
 
 function selectBank(bank) {
 selectedBank.value = bank
