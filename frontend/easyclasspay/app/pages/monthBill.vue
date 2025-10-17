@@ -8,7 +8,7 @@
             <div class="m-10">
                 <div class="flex gap-3 items-baseline">
                     <h1 class="text-3xl font-bold">บิลแบบรายเดือน</h1>
-                    <p class="text-xl">ไม่ต้องคิดเยอะเดี๋ยวพี่หมีช่วยเก็บในนะค้าบบ </p>
+                    <p class="text-xl">ตั้งครั้งเดียวพี่หมีแจ้งเองตรงเวลาเป๊ะๆ </p>
                 </div>
 
                 <div class="flex justify-between mt-5 gap-4">
@@ -190,11 +190,13 @@
                         </div>
 
                         <div class="flex mt-auto justify-center w-full">
-                            <button type="submit"
+                            <router-link
+                             to="/submitmonthbill"
+                                type="submit"
                                 class="bg-[#159448] hover:bg-[#11783a] py-4 rounded-xl text-white text-2xl font-bold flex justify-center items-center gap-3 shadow-lg transition w-[100%]">
                                 ถัดไป
                                 <img src="/arrow-r.png" alt="arrow" class="w-5 h-5" />
-                            </button>
+                            </router-link>
                         </div>
 
                     </div>
