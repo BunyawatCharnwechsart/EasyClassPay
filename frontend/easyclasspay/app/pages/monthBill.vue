@@ -3,13 +3,16 @@
     
     <navbar/>
 
-    <div class="m-10">
+    <form class="flex flex-col bg-white m-10 p-2 rounded-2xl ring ring-yellow-200 col-auto">
+
+        <div class="m-10">
             <div class="flex gap-3 items-baseline">
                 <h1 class="text-3xl font-bold">สร้างบิลเก็บตังค์</h1>
                 <p class="text-xl">ไม่ต้องคิดเยอะเดี๋ยวพี่หมีช่วยเก็บในนะค้าบบ </p>
             </div>
 
-            <div class="flex mt-5">
+            <div class="flex justify-between mt-5 gap-4">
+
                 <div class="flex flex-col gap-4 w-full">
 
                     <!-- ที่กรอกชื่อกับยอดบิล -->
@@ -221,10 +224,33 @@
         </div>
 
     <about/>
+
+    </form>
 </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
+const activeTab = ref('bank');
+const isOpen = ref(false);
+const selectedBank = ref(null)
+
+const listBank = [
+    {
+        img:'/kongthai.png',
+        name:'ธนาคารกรุงไทย'
+    },
+    {
+        img:'/thaipanit.png',
+        name:'ธนาคารไทยพาณิชย์'
+    },
+    {
+        img:'/kasikon.png',
+        name:'ธนาคารกสิกรไทย'
+    }
+];
+
 import navbar from '~/components/navbar.vue';
 import about from '~/components/about.vue';
 import ModelSearch from '~/components/ModelSearch.vue';
@@ -238,4 +264,9 @@ const{
 watch(usersData, (newData) => {
     console.log('usersData received', newData)
 });
+
+function selectBank(bank) {
+selectedBank.value = bank
+isOpen.value = false
+}
 </script>
