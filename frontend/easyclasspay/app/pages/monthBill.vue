@@ -24,24 +24,18 @@
                                     <div class="flex gap-5 items-center">
                                         <div class="flex gap-5 items-center">
                                             <label class="text-2xl font-black" for="name">ชื่อบิล</label>
-                                            <input class="h-15 w-60 rounded-xl border-2 border-solid border-[#159448] placeholder:text-center text-center" type="text" placeholder="ตั้งชื่อบิลให้พี่หมีหน่อยย">
+                                            <input
+                                                v-model="title"
+                                                class="h-15 w-60 rounded-xl border-2 border-solid border-[#159448] placeholder:text-center text-center"
+                                                type="text" placeholder="ตั้งชื่อบิลให้พี่หมีหน่อยย">
                                         </div>
 
-                                        <div class="flex gap-5 items-center ml-30">
-                                            <label class="text-2xl font-black" for="amount">ยอดบิล</label>
+                                        <div class="flex gap-5 items-center">
 
-                                            <div class="relative">
-                                                <input
-                                                id="amount"
-                                                class="h-15 w-48 rounded-xl border-2 border-solid border-[#159448] placeholder:text-center text-center pr-10"
-                                                type="text"
-                                                v-model="billAmount"
-                                                @input="onlyNumbers('bill')"
-                                                maxlength="10"
-                                                placeholder="0"
-                                                >
-                                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-2xl font-bold text-[#159448]">฿</span>
-                                            </div>
+                                            <label class="text-2xl font-bold" for="total">ยอดบิล</label>
+                                            <input v-model="amount"
+                                                class="h-15 w-60 rounded-xl border-2 border-solid border-[#159448] placeholder:text-center text-center"
+                                                type="number" placeholder="กรุณาใส่ยอดเงิน">
                                         </div>
 
                                     </div>
@@ -88,7 +82,7 @@
                                                     <ModelSearch />
 
                                                     <!-- รายชื่อเพื่อนของฉันที่เพิ่มได้ -->
-                                                    <friendList :usersData="usersData"/>
+                                                    <friendList :usersData="usersData" />
                                                 </div>
                                             </div>
                                         </dialog>
@@ -186,11 +180,9 @@
                                         placeholder="กรุณากรอกชื่อบัญชี">
                                     <!-- เลขบัญชี -->
                                     <span class="text-xl font-bold">เลขบัญชี</span>
-                                    <input class="p-5 rounded-2xl border-gray-400 border-2"
-                                    type="text"
-                                    placeholder="กรุณากรอกเลขบัญชี"
-                                    v-model="accountNumber"
-                                    @input="onlyNumbers('account')">
+                                    <input class="p-5 rounded-2xl border-gray-400 border-2" type="text"
+                                        placeholder="กรุณากรอกเลขบัญชี" v-model="accountNumber"
+                                        @input="onlyNumbers('account')">
                                 </form>
                             </div>
                             <!-- เนื้อหา tab promptpay -->
@@ -203,24 +195,20 @@
                                         placeholder="กรุณากรอกชื่อบัญชี">
                                     <!-- รหัสพร้อมเพย์ -->
                                     <span class="text-xl font-bold">รหัสพร้อมเพย์</span>
-                                    <input class="p-5 rounded-2xl border-gray-400 border-2"
-                                    type="text"
-                                    placeholder="กรุณากรอกรหัสพร้อมเพย์"
-                                    v-model="promptpayNumber"
-                                    @input="onlyNumbers('promptpay')">
+                                    <input class="p-5 rounded-2xl border-gray-400 border-2" type="text"
+                                        placeholder="กรุณากรอกรหัสพร้อมเพย์" v-model="promptpayNumber"
+                                        @input="onlyNumbers('promptpay')">
                                 </div>
                             </div>
 
                         </div>
 
                         <div class="flex mt-auto justify-center w-full">
-                            <router-link
-                             to="/submitmonthbill"
-                                type="submit"
+                            <button @click.prevent="submitCreateBill" type="button"
                                 class="bg-[#159448] hover:bg-[#11783a] py-4 rounded-xl text-white text-2xl font-bold flex justify-center items-center gap-3 shadow-lg transition w-[100%]">
                                 ถัดไป
                                 <img src="/arrow-r.png" alt="arrow" class="w-5 h-5" />
-                            </router-link>
+                            </button>
                         </div>
 
                     </div>
@@ -284,12 +272,46 @@ const promptpayNumber = ref('');
 const billAmount = ref('');
 
 function onlyNumbers(type) {
-  if (type === 'account') {
-    accountNumber.value = accountNumber.value.replace(/\D/g, '');
-  } else if (type === 'promptpay') {
-    promptpayNumber.value = promptpayNumber.value.replace(/\D/g, '');
-  } else if (type === 'bill') {
-    billAmount.value = billAmount.value.replace(/\D/g, '');
-  }
+    if (type === 'account') {
+        accountNumber.value = accountNumber.value.replace(/\D/g, '');
+    } else if (type === 'promptpay') {
+        promptpayNumber.value = promptpayNumber.value.replace(/\D/g, '');
+    } else if (type === 'bill') {
+        billAmount.value = billAmount.value.replace(/\D/g, '');
+    }
+}
+
+const title = ref('');
+const amount = ref('');
+
+async function submitCreateBill() {
+    const payload = {
+        title: title.value,
+        amount: amount.value
+    }
+
+    try {
+        const res = await fetch('http://localhost:3005/api/MonthBill', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        })
+
+        const data = await res.json()
+
+        if (!res.ok) {
+            alert(data.message || "เกิดข้อผิดพลาดตอนสร้างบิล")
+            return
+        }
+
+        alert("สร้างบิลสำเร็จ!")
+        console.log(data)
+
+    } catch (err) {
+        console.error(err)
+        alert("ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้")
+    }
 }
 </script>
