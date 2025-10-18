@@ -81,3 +81,37 @@ exports.getBill = async(req, res) => {
         res.status(500).send("Server Error");
     }
 };
+
+exports.deleteBill = async(req, res) => {
+    try{
+        const { billid } = req.params;
+    
+        const [checkBill] = await pool.query(
+            "SELECT billid FROM easyclasspay.bill WHERE billid = ?", 
+            [billid]
+        );
+        
+        if(checkBill.length === 0) {
+            return res.status(404).json({ message: "ไม่พบบิลที่ต้องการลบ" });
+        }
+        
+        await pool.query(
+            "DELETE FROM easyclasspay.paymentstatus WHERE billid = ?", 
+            [billid]
+        );
+        
+        await pool.query(
+            "DELETE FROM easyclasspay.bill WHERE billid = ?", 
+            [billid]
+        );
+        
+        res.status(200).json({ 
+            message: "ลบบิลสำเร็จ",
+            deletedBillId: billid 
+        });
+        
+    }catch(err){
+        console.log(err);
+        res.status(500).json({ message: "Server Error", error: err.message });
+    }
+};

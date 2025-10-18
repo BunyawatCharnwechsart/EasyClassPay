@@ -8,5 +8,6 @@ router.get("/bill/paid", bill.paidBill);
 router.get("/bill/pending", bill.pendingBill);
 router.get("/bill/monthBill", bill.monthBill);
 router.get("/bill/getBill", bill.getBill);
+router.delete('/bill/:billid', bill.deleteBill);
 
 module.exports = router;
