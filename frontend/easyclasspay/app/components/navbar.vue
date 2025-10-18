@@ -44,7 +44,7 @@
                         src="/bell.png">
                 </div>
                 <section tabindex="0"
-                    class="dropdown-content menu bg-white rounded-2xl z-auto w-96 max-h-96 overflow-y-auto p-5 shadow-xl">
+                    class="dropdown-content menu bg-white rounded-2xl z-auto w-96 h-auto overflow-y-auto p-5 shadow-xl">
                     <div class=" border-b-2 border-gray-200">
                         <h1 class="flex justify-center text-xl font-bold mb-3">
                             การแจ้งเตือนทั้งหมด
@@ -67,7 +67,7 @@
                             <li v-for="(noti, index) in MessageNotiData" :key="index"
                                 class="hover:bg-gray-100 transition flex flex-col gap-1">
                                 <!-- เวลา -->
-                                <p class="text-sm text-gray-600">{{ noti.message }} <br> {{ noti.notificationdate }}</p>
+                                <p>{{ noti.message }} <br> {{ noti.notificationdate }}</p>
                             </li>
                         </ul>
                         <div v-else class="text-gray-500 text-center">
