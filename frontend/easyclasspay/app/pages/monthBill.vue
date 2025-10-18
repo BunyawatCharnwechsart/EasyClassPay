@@ -27,9 +27,21 @@
                                             <input class="h-15 w-60 rounded-xl border-2 border-solid border-[#159448] placeholder:text-center text-center" type="text" placeholder="ตั้งชื่อบิลให้พี่หมีหน่อยย">
                                         </div>
 
-                                        <div class="flex gap-5 items-center">
-                                            <label class="text-2xl font-bold" for="total">ยอดบิล</label>
-                                            <input class="h-15 w-60 rounded-xl border-2 border-solid border-[#159448] placeholder:text-center text-center" type="number" placeholder="กรุณาใส่ยอดเงิน">
+                                        <div class="flex gap-5 items-center ml-30">
+                                            <label class="text-2xl font-black" for="amount">ยอดบิล</label>
+
+                                            <div class="relative">
+                                                <input
+                                                id="amount"
+                                                class="h-15 w-48 rounded-xl border-2 border-solid border-[#159448] placeholder:text-center text-center pr-10"
+                                                type="text"
+                                                v-model="billAmount"
+                                                @input="onlyNumbers('bill')"
+                                                maxlength="10"
+                                                placeholder="0"
+                                                >
+                                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-2xl font-bold text-[#159448]">฿</span>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -273,12 +285,15 @@ function selectBank(bank) {
 
 const accountNumber = ref('');
 const promptpayNumber = ref('');
+const billAmount = ref('');
 
 function onlyNumbers(type) {
   if (type === 'account') {
     accountNumber.value = accountNumber.value.replace(/\D/g, '');
   } else if (type === 'promptpay') {
     promptpayNumber.value = promptpayNumber.value.replace(/\D/g, '');
+  } else if (type === 'bill') {
+    billAmount.value = billAmount.value.replace(/\D/g, '');
   }
 }
 </script>
