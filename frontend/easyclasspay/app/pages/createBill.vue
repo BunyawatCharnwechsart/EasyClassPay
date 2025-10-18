@@ -28,7 +28,6 @@
                                 </div>
 
                                 <div class="flex gap-5 items-center">
-
                                     <label class="text-2xl font-bold" for="total">ยอดบิล</label>
                                     <input v-model="amount"
                                         class="h-15 w-60 rounded-xl border-2 border-solid border-[#159448] placeholder:text-center text-center"
