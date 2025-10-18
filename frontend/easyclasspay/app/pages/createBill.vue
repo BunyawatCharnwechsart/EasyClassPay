@@ -171,7 +171,10 @@
                                 <!-- เลขบัญชี -->
                                 <span class="text-xl font-bold">เลขบัญชี</span>
                                 <input class="p-5 rounded-2xl border-gray-400 border-2" 
-                                type="text" placeholder="กรุณากรอกเลขบัญชี">
+                                type="text"
+                                placeholder="กรุณากรอกเลขบัญชี"
+                                v-model="accountNumber"
+                                @input="onlyNumbers('account')">
                             </div>
                         </div>
                         <!-- เนื้อหา tab promptpay -->
@@ -181,11 +184,15 @@
                                 <!-- ชื่อบัญชี -->
                                 <span class="text-xl font-bold">ชื่อบัญชี</span>
                                 <input class="p-5 rounded-2xl border-gray-400 border-2" 
-                                type="text" placeholder="กรุณากรอกชื่อบัญชี">
+                                type="text"
+                                placeholder="กรุณากรอกชื่อบัญชี">
                                 <!-- รหัสพร้อมเพย์ -->
                                 <span class="text-xl font-bold">รหัสพร้อมเพย์</span>
                                 <input class="p-5 rounded-2xl border-gray-400 border-2" 
-                                type="text" placeholder="กรุณากรอกรหัสพร้อมเพย์">
+                                type="text"
+                                placeholder="กรุณากรอกรหัสพร้อมเพย์"
+                                v-model="promptpayNumber"
+                                @input="onlyNumbers('promptpay')">
                             </div>
                         </div>
                         
@@ -247,5 +254,16 @@ const {
 function selectBank(bank) {
 selectedBank.value = bank
 isOpen.value = false
+}
+
+const accountNumber = ref('');
+const promptpayNumber = ref('');
+
+function onlyNumbers(type) {
+  if (type === 'account') {
+    accountNumber.value = accountNumber.value.replace(/\D/g, '');
+  } else if (type === 'promptpay') {
+    promptpayNumber.value = promptpayNumber.value.replace(/\D/g, '');
+  }
 }
 </script>
