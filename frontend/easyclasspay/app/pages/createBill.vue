@@ -28,10 +28,27 @@
                                 </div>
 
                                 <div class="flex gap-5 items-center">
+
                                     <label class="text-2xl font-bold" for="total">ยอดบิล</label>
                                     <input v-model="amount"
                                         class="h-15 w-60 rounded-xl border-2 border-solid border-[#159448] placeholder:text-center text-center"
                                         type="number" placeholder="กรุณาใส่ยอดเงิน">
+                                  
+                                    <label class="text-2xl font-black" for="amount">ยอดบิล</label>
+
+                                    <div class="relative">
+                                        <input
+                                        id="amount"
+                                        class="h-15 w-48 rounded-xl border-2 border-solid border-[#159448] placeholder:text-center text-center pr-10"
+                                        type="text"
+                                        v-model="billAmount"
+                                        @input="onlyNumbers('bill')"
+                                        maxlength="10"
+                                        placeholder="0"
+                                        >
+                                        <span class="absolute right-3 top-1/2 -translate-y-1/2 text-2xl font-bold text-[#159448]">฿</span>
+                                    </div>
+
                                 </div>
 
                             </div>

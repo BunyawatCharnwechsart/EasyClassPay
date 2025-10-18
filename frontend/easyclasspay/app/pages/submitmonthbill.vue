@@ -29,6 +29,7 @@
                             <!-- ที่กรอกชื่อกับยอดบิล -->
                             <div class="bg-white shadow-xl rounded-b-2xl">
                                 <div class="bg-[#FFC93F] h-12 rounded-b-full"></div>
+
                                 <div class="flex justify-between p-10">
 
                                     <div class="flex gap-5 items-center">
@@ -36,6 +37,16 @@
                                         <input
                                             class="h-15 w-60 rounded-xl border-2 border-solid border-[#159448] placeholder:text-center text-center"
                                             type="text" placeholder="ตั้งชื่อบิลให้พี่หมีหน่อยย">
+                                    </div>
+
+                                    <div class="flex gap-5 items-center ml-30">
+                                        <label class="text-2xl font-black" for="amount">ยอดบิล</label>
+
+                                        <div class="h-15 w-60 rounded-xl border-2 border-solid border-[#159448] 
+                                                    flex items-center justify-between">
+                                            <span class="text-2xl mx-auto font-bold">3000</span>
+                                            <span class="text-2xl font-bold mr-3 text-green-700">฿</span>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -54,15 +65,6 @@
 
                                 <!-- รายชื่อที่อยู่ในบิล -->
                                 <div class="w-3/5 bg-white shadow-2xl p-6 rounded-xl">
-                                    <!-- หัวข้อ + ยอดรวม (คงที่) -->
-                                    <div class="mt-3 flex gap-5 items-center">
-                                        <h2 class="text-2xl font-bold">ยอดบิล</h2>
-
-                                        <div class="flex items-center p-2 pl-4 pr-4 gap-6 border rounded-xl shadow-sm bg-white border-green-600">
-                                            <span class="text-l">3000</span>
-                                            <span class="text-lg font-bold text-green-700">฿</span>
-                                        </div>
-                                    </div>
 
                                     <div class="grid grid-cols-2 gap-10 mt-8">
                                         <!-- สมาชิก 1 -->
