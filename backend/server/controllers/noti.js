@@ -4,7 +4,7 @@ const dayjs = require("dayjs");
 
 exports.getAllNoti= async (req, res) => {
 try {
-    const [rows] = await pool.query("SELECT * FROM easyclasspay.notification;");
+    const [rows] = await pool.query("SELECT * FROM easyclasspay.notification ORDER BY notificationdate DESC;");
     res.json(rows);
 } catch (err) {
     console.log(err);
@@ -15,7 +15,9 @@ try {
 exports.getMessageNoti= async(req, res)=>{
     try{
         console.log("Fetching Message.....")
-        const [rows] = await pool.query("SELECT message,notificationdate FROM easyclasspay.notification;")
+        const [rows] = await pool.query(
+            "SELECT message, notificationdate FROM easyclasspay.notification ORDER BY notificationdate DESC;"
+        );
         const formatted = rows.map(row => ({
             ...row,
             notificationdate: dayjs(row.notificationdate).format("DD-MM-YYYY HH:mm"),

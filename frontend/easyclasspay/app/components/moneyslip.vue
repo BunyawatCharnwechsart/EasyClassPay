@@ -1,3 +1,4 @@
+//moneyslip 
 <template>
   <div class="flex justify-center items-center min-h-screen bg-gray-100 font-Bai-Jamjuree">
     
