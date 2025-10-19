@@ -263,10 +263,15 @@ async function submitCreateBill() {
         alert("สร้างบิลสำเร็จ!")
         console.log(data)
 
+        // รีเซ็ตค่า input
+        title.value = ''
+        amount.value = ''
+
     } catch (err) {
         console.error(err)
         alert("ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้")
     }
 }
+
 
 </script>

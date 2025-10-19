@@ -44,34 +44,36 @@
                         src="/bell.png">
                 </div>
                 <section tabindex="0"
-                    class="dropdown-content menu bg-white rounded-2xl z-auto w-96 h-auto overflow-y-auto p-5 shadow-xl">
-                    <div class=" border-b-2 border-gray-200">
-                        <h1 class="flex justify-center text-xl font-bold mb-3">
+                    class="dropdown-content menu bg-white rounded-2xl z-auto w-96 shadow-xl">
+                    <div class="border-b-2 border-gray-200 p-5 pb-3">
+                        <h1 class="flex justify-center text-xl font-bold">
                             การแจ้งเตือนทั้งหมด
                         </h1>
                     </div>
+                    <!-- Scrollable Content Area -->
+                    <div class="h-96 overflow-y-auto p-5">
+                        <!-- Loading -->
+                        <div v-if="MessageNotiStatus === 'pending'">
+                            กำลังโหลด...
+                        </div>
 
-                    <!-- Loading -->
-                    <div v-if="MessageNotiStatus === 'pending'">
-                        กำลังโหลด...
-                    </div>
+                        <!-- Error -->
+                        <div v-else-if="MessageNotiError">
+                            เกิดข้อผิดพลาด: {{ MessageNotiError.message }}
+                        </div>
 
-                    <!-- Error -->
-                    <div v-else-if="MessageNotiError">
-                        เกิดข้อผิดพลาด: {{ MessageNotiError.message }}
-                    </div>
-
-                    <!-- Data -->
-                    <div v-else class="mt-2">
-                        <ul v-if="MessageNotiData && MessageNotiData.length > 0" class="space-y-3">
-                            <li v-for="(noti, index) in MessageNotiData" :key="index"
-                                class="hover:bg-gray-100 transition flex flex-col gap-1">
-                                <!-- เวลา -->
-                                <p>{{ noti.message }} <br> {{ noti.notificationdate }}</p>
-                            </li>
-                        </ul>
-                        <div v-else class="text-gray-500 text-center">
-                            ไม่มีการแจ้งเตือน
+                        <!-- Data -->
+                        <div v-else>
+                            <ul v-if="MessageNotiData && MessageNotiData.length > 0" class="space-y-3">
+                                <li v-for="(noti, index) in MessageNotiData" :key="index"
+                                    class="hover:bg-gray-100 transition flex flex-col gap-1 p-3 rounded-lg">
+                                    <!-- เวลา -->
+                                    <p>{{ noti.message }} <br> {{ noti.notificationdate }}</p>
+                                </li>
+                            </ul>
+                            <div v-else class="text-gray-500 text-center">
+                                ไม่มีการแจ้งเตือน
+                            </div>
                         </div>
                     </div>
                 </section>
