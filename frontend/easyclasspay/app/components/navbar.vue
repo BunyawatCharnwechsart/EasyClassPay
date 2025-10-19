@@ -89,15 +89,11 @@
 
                         <!-- เปลี่ยนโปรไฟล์ -->
                         <div 
-                            v-for="(user, index) in userData" :key="index" 
                             class="flex flex-col items-center gap-2 p-5">
                             <img class="w-10 h-10 hover:scale-150 transition-transform duration-500" src="/Avatar.png">
-                            <div class="flex gap-2">
-                                <h1>{{ user.username }}</h1>
-                                <img class="w-4 h-4" src="/edit.png" alt="edit">
-                            </div>
-                            <p>{{ user.fname }} {{ user.lname }}</p>
-                            <p>{{ user.email }}</p>
+                            <h1>พี่หมี</h1>
+                            <p>บุณยวัจน์ ชาญเวชศาสตร์</p>
+                            <p>บุณยวัจน์@gmail.com</p>
                         </div>
 
                         <div class="bg-gray-400 h-0.5 w-full rounded-full"></div>

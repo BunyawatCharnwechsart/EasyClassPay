@@ -50,6 +50,21 @@ exports.pendingBill = async(req, res) => {
     }
 };
 
+exports.paidBill = async(req, res) => {
+    try{
+        const [rows] = await pool.query("SELECT b.billid,b.title,bt.typebill,ps.pstatus,b.amount,b.createddate FROM easyclasspay.bill b LEFT JOIN billtype bt ON b.idbillType = bt.idbillType LEFT JOIN paymentstatus ps ON b.billid = ps.billid where ps.pstatus = 'paid';");
+        const formatted = rows.map(row => ({
+            ...row,
+            createddate: dayjs(row.createddate).format("DD-MM-YYYY HH:mm"),
+            duedate: dayjs(row.duedate).format("DD-MM-YYYY HH:mm")
+        }));
+        res.json(formatted);
+    }catch(err){
+        console.log(err);
+        res.status(500).send("Server Error");
+    }
+};
+
 //บิลรายเดือน
 exports.monthBill = async(req, res) => {
     try{
@@ -111,6 +126,25 @@ exports.deleteBill = async(req, res) => {
         });
         
     }catch(err){
+        console.log(err);
+        res.status(500).json({ message: "Server Error", error: err.message });
+    }
+};
+
+exports.updateBill = async (req, res) => {
+    const { billid } = req.params; 
+    try {
+        const [result] = await pool.execute(
+            "UPDATE easyclasspay.paymentstatus SET pstatus = 'paid' WHERE billid = ?",
+            [billid]
+        );
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ message: "Bill not found" });
+        }
+
+        res.status(200).json({ message: "Bill updated successfully" });
+    } catch (err) {
         console.log(err);
         res.status(500).json({ message: "Server Error", error: err.message });
     }
