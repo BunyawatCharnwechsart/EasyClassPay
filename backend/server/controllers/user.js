@@ -10,3 +10,14 @@ try {
     res.status(500).send("Server Error");
 }
 };
+
+exports.getOneUser = async (req, res) => {
+try {
+    const [rows] = await pool.query("SELECT username, fname, lname, email FROM easyclasspay.users WHERE users.userid = '1';");
+    res.json(rows);
+} catch (err) {
+    console.log(err);
+    res.status(500).send("Server Error");
+}
+};
+

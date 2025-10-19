@@ -4,7 +4,6 @@
         <navbar />
 
         <form class="flex flex-col bg-white m-10 rounded-2xl ring ring-yellow-200 col-auto">
-
             <div class="m-10">
                 <div class="flex gap-3 items-baseline">
                     <h1 class="text-3xl font-bold">บิลแบบรายเดือน</h1>
@@ -18,36 +17,30 @@
                         <div class="flex flex-col gap-4 w-full">
                             <!-- ที่กรอกชื่อกับยอดบิล -->
                             <div class="bg-white shadow-xl rounded-b-2xl">
-                                <div class="bg-[#FFC93F] h-12 rounded-b-full"></div>
-                                <div class="flex justify-between p-10">
+                            <div class="bg-[#FFC93F] h-12 rounded-b-full"></div>
+                            <div class="flex justify-between p-10">
 
-                                    <div class="flex gap-5 items-center">
-                                        <div class="flex gap-5 items-center">
-                                            <label class="text-2xl font-black" for="name">ชื่อบิล</label>
-                                            <input class="h-15 w-60 rounded-xl border-2 border-solid border-[#159448] placeholder:text-center text-center" type="text" placeholder="ตั้งชื่อบิลให้พี่หมีหน่อยย">
-                                        </div>
-
-                                        <div class="flex gap-5 items-center ml-30">
-                                            <label class="text-2xl font-black" for="amount">ยอดบิล</label>
-
-                                            <div class="relative">
-                                                <input
-                                                id="amount"
-                                                class="h-15 w-48 rounded-xl border-2 border-solid border-[#159448] placeholder:text-center text-center pr-10"
-                                                type="text"
-                                                v-model="billAmount"
-                                                @input="onlyNumbers('bill')"
-                                                maxlength="10"
-                                                placeholder="0"
-                                                >
-                                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-2xl font-bold text-[#159448]">฿</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
+                                <div class="flex gap-5 items-center">
+                                    <label class="text-2xl font-black" for="name">ชื่อบิล</label>
+                                    <input v-model="billTitle"
+                                        class="h-15 w-60 rounded-xl border-2 border-solid border-[#159448] placeholder:text-center text-center"
+                                        type="text" placeholder="ตั้งชื่อบิลให้พี่หมีหน่อยย">
                                 </div>
+
+                                <div class="flex gap-5 items-center">
+                                    <label class="text-2xl font-black" for="amount">ยอดบิล</label>
+
+                                    <div class="relative">
+                                        <input id="amount" v-model="billAmount"
+                                            class="h-15 w-48 rounded-xl border-2 border-solid border-[#159448] placeholder:text-center text-center pr-10"
+                                            type="text" @input="onlyNumbers('bill')" maxlength="10" placeholder="0">
+                                        <span
+                                            class="absolute right-3 top-1/2 -translate-y-1/2 text-2xl font-bold text-[#159448]">฿</span>
+                                    </div>
+                                </div>
+
                             </div>
+                        </div>
 
                             <!-- ส่วนของใส่วันที่และรายชื่อที่อยู่ในบิล -->
                             <div class="flex gap-5">
@@ -191,11 +184,9 @@
                                         placeholder="กรุณากรอกชื่อบัญชี">
                                     <!-- เลขบัญชี -->
                                     <span class="text-xl font-bold">เลขบัญชี</span>
-                                    <input class="p-5 rounded-2xl border-gray-400 border-2"
-                                    type="text"
-                                    placeholder="กรุณากรอกเลขบัญชี"
-                                    v-model="accountNumber"
-                                    @input="onlyNumbers('account')">
+                                    <input class="p-5 rounded-2xl border-gray-400 border-2" type="text"
+                                        placeholder="กรุณากรอกเลขบัญชี" v-model="accountNumber"
+                                        @input="onlyNumbers('account')">
                                 </form>
                             </div>
                             <!-- เนื้อหา tab promptpay -->
@@ -208,24 +199,24 @@
                                         placeholder="กรุณากรอกชื่อบัญชี">
                                     <!-- รหัสพร้อมเพย์ -->
                                     <span class="text-xl font-bold">รหัสพร้อมเพย์</span>
-                                    <input class="p-5 rounded-2xl border-gray-400 border-2"
-                                    type="text"
-                                    placeholder="กรุณากรอกรหัสพร้อมเพย์"
-                                    v-model="promptpayNumber"
-                                    @input="onlyNumbers('promptpay')">
+                                    <input class="p-5 rounded-2xl border-gray-400 border-2" type="text"
+                                        placeholder="กรุณากรอกรหัสพร้อมเพย์" v-model="promptpayNumber"
+                                        @input="onlyNumbers('promptpay')">
                                 </div>
                             </div>
 
                         </div>
 
-                        <div class="flex mt-auto justify-center w-full">
-                            <router-link
-                             to="/submitmonthbill"
-                                type="submit"
-                                class="bg-[#159448] hover:bg-[#11783a] py-4 rounded-xl text-white text-2xl font-bold flex justify-center items-center gap-3 shadow-lg transition w-[100%]">
-                                ถัดไป
-                                <img src="/arrow-r.png" alt="arrow" class="w-5 h-5" />
-                            </router-link>
+                        <div class="flex mt-5 justify-center w-full">
+                        <button
+                            type="button"
+                            :disabled="billTitle === '' || billAmount === ''"
+                            @click="goToSubmit"
+                            class="bg-[#159448] hover:bg-[#11783a] py-4 rounded-xl text-white text-2xl font-bold flex justify-center items-center gap-3 shadow-lg transition w-[100%] disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                            ถัดไป
+                            <img src="/arrow-r.png" alt="arrow" class="w-5 h-5" />
+                        </button>
                         </div>
 
                     </div>
@@ -244,56 +235,40 @@
 
 <script setup>
 import { ref } from 'vue';
-
-const activeTab = ref('bank');
-const isOpen = ref(false);
-const selectedBank = ref(null)
-
-const listBank = [
-    {
-        img: '/kongthai.png',
-        name: 'ธนาคารกรุงไทย'
-    },
-    {
-        img: '/thaipanit.png',
-        name: 'ธนาคารไทยพาณิชย์'
-    },
-    {
-        img: '/kasikon.png',
-        name: 'ธนาคารกสิกรไทย'
-    }
-];
-
+import { useRouter } from 'vue-router';
 import navbar from '~/components/navbar.vue';
 import about from '~/components/about.vue';
 import ModelSearch from '~/components/ModelSearch.vue';
-import { watch } from 'vue';
 
-const {
-    data: usersData,
-    error: usersError
-} = await useFetch('http://localhost:3005/api/users');
-
-watch(usersData, (newData) => {
-    console.log('usersData received', newData)
-});
-
-function selectBank(bank) {
-    selectedBank.value = bank
-    isOpen.value = false
-}
-
+const billTitle = ref('');
+const billAmount = ref('');
+const activeTab = ref('bank');
+const isOpen = ref(false);
+const selectedBank = ref(null);
 const accountNumber = ref('');
 const promptpayNumber = ref('');
-const billAmount = ref('');
+
+const listBank = [
+    { img: '/kongthai.png', name: 'ธนาคารกรุงไทย' },
+    { img: '/thaipanit.png', name: 'ธนาคารไทยพาณิชย์' },
+    { img: '/kasikon.png', name: 'ธนาคารกสิกรไทย' }
+];
+
+function selectBank(bank) {
+    selectedBank.value = bank;
+    isOpen.value = false;
+}
 
 function onlyNumbers(type) {
-  if (type === 'account') {
-    accountNumber.value = accountNumber.value.replace(/\D/g, '');
-  } else if (type === 'promptpay') {
-    promptpayNumber.value = promptpayNumber.value.replace(/\D/g, '');
-  } else if (type === 'bill') {
-    billAmount.value = billAmount.value.replace(/\D/g, '');
-  }
+    if (type === 'account') accountNumber.value = accountNumber.value.replace(/\D/g, '');
+    else if (type === 'promptpay') promptpayNumber.value = promptpayNumber.value.replace(/\D/g, '');
+    else if (type === 'bill') billAmount.value = billAmount.value.replace(/\D/g, '');
 }
+
+const router = useRouter();
+const goToSubmit = () => {
+    router.push({ path: '/submitmonthbill', 
+    query: { title: billTitle.value, amount: billAmount.value } 
+});
+};
 </script>

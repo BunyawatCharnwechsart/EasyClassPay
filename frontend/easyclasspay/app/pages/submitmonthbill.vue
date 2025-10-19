@@ -28,29 +28,23 @@
                         <div class="flex flex-col gap-4 w-full">
                             <!-- ที่กรอกชื่อกับยอดบิล -->
                             <div class="bg-white shadow-xl rounded-b-2xl">
-                                <div class="bg-[#FFC93F] h-12 rounded-b-full"></div>
+                            <div class="bg-[#FFC93F] h-12 rounded-b-full"></div>
+                            <div class="flex justify-between p-10">
+                                <div class="flex gap-5 items-center">
+                                    <label class="text-2xl font-black" for="name">ชื่อบิล</label>
+                                    <input v-model="billTitle"
+                                        class="h-15 w-60 rounded-xl border-2 border-solid border-[#159448] text-start text-xl pl-3"
+                                        type="text">
+                                </div>
 
-                                <div class="flex justify-between p-10">
-
-                                    <div class="flex gap-5 items-center">
-                                        <label class="text-2xl font-black" for="name">ชื่อบิล</label>
-                                        <input
-                                            class="h-15 w-60 rounded-xl border-2 border-solid border-[#159448] placeholder:text-center text-center"
-                                            type="text" placeholder="ตั้งชื่อบิลให้พี่หมีหน่อยย">
-                                    </div>
-
-                                    <div class="flex gap-5 items-center ml-30">
-                                        <label class="text-2xl font-black" for="amount">ยอดบิล</label>
-
-                                        <div class="h-15 w-60 rounded-xl border-2 border-solid border-[#159448] 
-                                                    flex items-center justify-between">
-                                            <span class="text-2xl mx-auto font-bold">3000</span>
-                                            <span class="text-2xl font-bold mr-3 text-green-700">฿</span>
-                                        </div>
-                                    </div>
-
+                                <div class="flex gap-5 items-center">
+                                    <label class="text-2xl font-bold" for="total">ยอดบิล</label>
+                                    <input v-model="billAmount"
+                                        class="h-15 w-60 rounded-xl border-2 border-solid border-[#159448] placeholder:text-center text-center"
+                                        type="number">
                                 </div>
                             </div>
+                        </div>
 
                             <!-- ส่วนของใส่วันที่และรายชื่อที่อยู่ในบิล -->
                             <div class="flex gap-5">
@@ -144,12 +138,10 @@
                         </div>
 
                         <div class="flex mt-auto justify-center w-full">
-                            <router-link
-                             to=""
-                                type="submit"
+                            <button type="button" @click="submitAndGoAllBill"
                                 class="bg-[#159448] hover:bg-[#11783a] py-4 rounded-xl text-white text-2xl font-bold flex justify-center items-center gap-3 shadow-lg transition w-[100%]">
                                 เสร็จสิ้น
-                            </router-link>
+                            </button>
                         </div>
 
                     </div>
@@ -167,6 +159,42 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import navbar from '~/components/navbar.vue';
 import about from '~/components/about.vue';
+import ModelSearch from '~/components/ModelSearch.vue';
+
+const route = useRoute();
+const router = useRouter();
+
+const billTitle = ref('');
+const billAmount = ref('');
+
+onMounted(() => {
+    billTitle.value = route.query.title || '';
+    billAmount.value = route.query.amount || '';
+});
+
+// เปิด Modal เพิ่มเพื่อน
+const my_modal_3 = ref(null);
+const openModal = () => {
+    my_modal_3.value.showModal();
+};
+
+// ส่งข้อมูลบิลไป backend แต่ไม่รอผล → ไป allBill ทันที
+const submitAndGoAllBill = async () => {
+    // ส่งข้อมูลแบบไม่รอผล
+    fetch('http://localhost:3005/api/createBill', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            title: billTitle.value,
+            amount: Number(billAmount.value)
+        })
+    }).catch(err => console.error("ส่งข้อมูลล้มเหลว:", err));
+
+    // ไปหน้า allBill ทันที
+    router.push('/allBill');
+};
 </script>
