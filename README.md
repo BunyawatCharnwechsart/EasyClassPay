@@ -18,6 +18,14 @@ EasyClassPay เป็นเว็บไซต์สำหรับจัดก�
 👉 [View Scrum Documentation](https://docs.google.com/spreadsheets/d/1f_7c4YezEJM7nbMqgJtEJ1GY5u_yNqv4r4gQkobkMhg/edit?usp=sharing)
 
 ---
+## 🎨 UI/UX Design
+
+ออกแบบ **UI/UX และ Prototype** ของระบบ EasyClassPay ด้วย Figma
+เพื่อกำหนดรูปแบบหน้าจอและ Flow การใช้งานก่อนนำไปพัฒนาระบบ
+
+👉 [View Figma Design](https://www.figma.com/design/p50QqJqedUIiOcDdszZjro/EasyClassPay?node-id=0-1&t=jAaZJUmWa8GprnA0-1)
+
+---
 
 ## 🧪 Software Testing
 
